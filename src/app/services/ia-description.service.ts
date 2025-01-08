@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { ConstantsService } from './constants.service';
 import { CommonsService } from './commons.service';
 import OpenAI, { OpenAIError } from 'openai';
-import { environment } from '@env/environment';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root'

@@ -16,7 +16,7 @@
 }
 
 h3 {
-  position: relative; /* Necesario para posicionar el botón dentro de este contenedor */
+  position: relative;
   text-align: center;
   padding: 2rem 0 0;
 }
@@ -43,7 +43,6 @@ h3 {
 .card-item {
   height: auto;
   width: 100%;
-  //background: linear-gradient($color-goldenrod, $color-beige);
   background-color: rgb(var(--color)); //$color-goldenrod;
   border-radius: 0.5rem;
   transition: transform 0.5s ease, background-color 0.5s ease;
@@ -59,7 +58,6 @@ h3 {
   display: block;
   height: auto;
   width: 100%;
-  //background: linear-gradient($color-goldenrod, $color-beige);
   background-color: rgb(var(--color)); //$color-goldenrod;
 }
 
@@ -177,7 +175,6 @@ h3 {
   }
 }
 
-
 .characters div{
   background-color: var(--color);
   position: relative;
@@ -244,25 +241,25 @@ h3 {
 }
 
 .loading-overlay {
-  position: fixed; /* Ocupa toda la pantalla */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-  display: flex; /* Usa flexbox para centrar el contenido */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  z-index: 9999; /* Asegúrate de que esté por encima de otros elementos */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 
   .spinner-border {
     width: 3rem;
     height: 3rem;
-    border-width: 0.3rem; /* Ajusta el grosor del spinner */
+    border-width: 0.3rem;
   }
 
   .sr-only {
-    display: none; /* Oculta el texto accesible si no es necesario */
+    display: none;
   }
 }
 
@@ -370,10 +367,10 @@ input {
 }
 
 #text-container {
-  width: 96%; /* Ajusta el tamaño según lo necesites */
-  height: 100%; /* Altura del contenedor */
+  width: 96%;
+  height: 100%;
   min-height: 20vw;
-  overflow-y: hidden; /* Scroll si el contenido excede el contenedor */
+  overflow-y: hidden;
   overflow-x: hidden;
   border: 1px solid $color-steel-blue;
   padding: .5rem;
@@ -461,12 +458,12 @@ ul {
 }
 
 .status-stunned {
-  background-color: rgba(255, 204, 0, 0.5); /* Naranja transparente */
+  background-color: rgba(255, 204, 0, 0.5);
   border-radius: 0.5rem;
 }
 
 .status-inspired {
-  background-color: rgb(128, 64, 12, 0.5); /* Rojo transparente */
+  background-color: rgb(128, 64, 12, 0.5);
   border-radius: 0.5rem;
 }
 
@@ -485,21 +482,21 @@ ul {
 }
 
 .character-section {
-  background-color: rgba($color-goldenrod, 0.5); // Fondo claro para destacar la sección
-  border: 1px solid $color-goldenrod; // Bordes sutiles
-  border-radius: .5rem; // Bordes redondeados
-  padding: 1rem; // Espaciado interno
-  margin: 0 .5rem 1rem .5rem; // Espaciado entre secciones
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sombra suave
+  background-color: rgba($color-goldenrod, 0.5);
+  border: 1px solid $color-goldenrod;
+  border-radius: .5rem;
+  padding: 1rem;
+  margin: 0 .5rem 1rem .5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   .equipment-title {
-    font-size: 1.3rem; // Tamaño de fuente más grande para el título
+    font-size: 1.3rem;
     font-weight: bold;
-    color: $color-charcoal; // Color oscuro para destacar
-    margin-bottom: .6rem; // Espaciado inferior
-    text-transform: uppercase; // Todo en mayúsculas
-    border-bottom: 2px solid $color-charcoal; // Línea decorativa bajo el título
-    padding-bottom: .2rem; // Espaciado inferior adicional
+    color: $color-charcoal;
+    margin-bottom: .6rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid $color-charcoal;
+    padding-bottom: .2rem;
     .expand-toggle {
       font-size: 0.75rem;
       color: $color-steel-blue;
@@ -509,42 +506,42 @@ ul {
   }
 
   .equipment-list {
-    list-style: none; // Quita los marcadores de lista
-    padding: 0; // Sin margen interno
-    margin: 0; // Sin margen externo
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
     li {
-      display: block; // Para alinear texto y descripción en la misma línea
-      justify-content: space-between; // Espaciado entre los elementos
-      align-items: center; // Centrado vertical
-      background-color: $color-beige; // Fondo blanco para destacar cada elemento
-      border: 1px solid $color-goldenrod; // Bordes sutiles
-      border-radius: 4px; // Bordes ligeramente redondeados
-      padding: 8px 12px; // Espaciado interno
-      margin-bottom: 8px; // Espaciado entre elementos
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Sombra ligera
+      display: block;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $color-beige;
+      border: 1px solid $color-goldenrod;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 
       &:last-child {
-        margin-bottom: 0; // Elimina margen del último elemento
+        margin-bottom: 0;
       }
 
       span {
-        font-size: 1rem; // Tamaño de fuente estándar
-        color: #495057; // Color gris oscuro
+        font-size: 1rem;
+        color: #495057;
 
         & strong {
-          color: #212529; // Color más oscuro para destacar la descripción
+          color: #212529;
         }
       }
     }
   }
 
   .no-items-text {
-    font-size: 1rem; // Tamaño de fuente estándar
-    color: #6c757d; // Color gris medio para el texto alternativo
-    text-align: center; // Centra el texto
-    margin-top: .5rem; // Espaciado superior
-    font-style: italic; // Texto en cursiva para destacar
+    font-size: 1rem;
+    color: #6c757d;
+    text-align: center;
+    margin-top: .5rem;
+    font-style: italic;
   }
 }
 
@@ -631,14 +628,14 @@ ul {
 
 .options-confrontation button:hover {
   background-color: $color-steel-blue;
-  border-color: $color-beige; /* Añade un borde visible al hover */
-  transform: scale(1.05); /* Efecto de zoom */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Aumenta la sombra */
+  border-color: $color-beige;
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 768px) {
   .options-confrontation {
-    grid-template-columns: 1fr; /* Botones en una sola columna en pantallas pequeñas */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -648,8 +645,3 @@ ul {
   margin-right: 1rem;
   filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(180deg);
 }
-
-/*.highlight-text {
-  font-weight: bold;
-  color: $color-beige;
-}*/

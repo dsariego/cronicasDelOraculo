@@ -44,3 +44,4 @@ Thumbs.db
 src/.env
 src/environments/environment*.ts
 /node_modules
+/backup
