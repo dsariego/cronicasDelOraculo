@@ -2,7 +2,7 @@
   "name": "cronicas-del-oraculo",
   "version": "0.0.0",
   "scripts": {
-    "start": "node -r dotenv/config ./node_modules/@angular/cli/bin/ng serve",
+    "start": "ng serve",
     "ng": "ng",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
