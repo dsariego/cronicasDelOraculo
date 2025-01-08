@@ -1,0 +1,7 @@
+<div class="grid-container">
+
+  <app-options-template class="grid-options" [menuItems]="_constants.menuItemsChronicles1" [itemName]="_constants.chronicles" [separatorColor]="_constants.colorGold"></app-options-template>
+  <app-hermit-template class="grid-hermit" [itemName]="_constants.chronicles" [separatorColor]="_constants.colorGold" [tooltipMessage]="_constants.tooltipsHermitDialogue1"></app-hermit-template>
+  <app-record-template *ngIf="_userService.getUserObject()" class="grid-record" [menuItems]="_constants.menuItemsChronicles2" [itemName]="_constants.saga" [separatorColor]="_constants.colorGold"></app-record-template>
+
+</div>

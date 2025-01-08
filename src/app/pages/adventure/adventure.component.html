@@ -1,0 +1,24 @@
+<div class="grid-container">
+  <div class="grid-item grid-options papyrus-background rounded-shadow" style="--grid-columns: 8.25; --border-color: #DAA520;">
+    <div class="grid-cover">
+      <img src="assets/images/cover_adventure_web.webp" class="" alt="El grimorio">
+    </div>
+    <div class="separator separator-color" style="--separator-color: #DAA520; --separator-width: 100%; --line-top: 0; --line-bottom: 1rem;"></div>
+    <div class="blk-logo">
+      <form (ngSubmit)="changeName(name.value, password.value)" class="m-2" #form="ngForm">
+        <label for="name">¿Cómo te llamas, aventurero?</label>
+        <input type="text" id="name" name="name" #name required maxlength="30" ngModel><br>
+        <label for="password">¿Cuál es tu sello?</label>
+        <input type="password" id="password" name="password" #password required minlength="4" maxlength="16" ngModel><br>
+        <button [disabled]="form.invalid">Alta usuario</button>
+        <p>{{form.valid}}</p>
+      </form>
+      <h2 class="p-2" *ngIf="_userService.getUserRole() !== null">{{ _userService.userObject()?.name }} y pass {{ _userService.userObject()?.password }}</h2>
+      <button (click)="logout()" class="btn btn-danger">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <app-hermit-template class="grid-hermit" [itemName]="_constants.adventure" [separatorColor]="_constants.colorGold" [tooltipMessage]="_constants.tooltipsHermitDialogue4"></app-hermit-template>
+
+</div>
+

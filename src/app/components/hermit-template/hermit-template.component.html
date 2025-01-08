@@ -1,0 +1,16 @@
+<div class="grid-item grid-hermit papyrus-background rounded-shadow" style="--grid-columns: 3.75; --border-color: #DAA520;">
+  <div class="blk-logo image-container">
+    <img src="assets/images/hermit-old-front.png" class="" alt="El Ermitaño">
+    <div class="separator separator-color" [style.--separator-color]="separatorColor" style="--separator-width: 100%; --line-top: 0; --line-bottom: 1rem;"></div>
+    <p class="tooltip-name">EL ERMITAÑO</p>
+    <p class="dialogue" [innerHTML]="tooltipMessage"></p>
+    <div class="form-check form-switch custom-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedHelp" [(ngModel)]="userNeedHelp" (change)="onSwitchChange('help')" (click)="onItemClickItem()">
+      <label class="form-check-label" for="flexSwitchCheckCheckedHelp">{{ userNeedHelp ? 'Ignorar al Ermitaño' : 'Escuchar al Ermitaño' }}</label>
+    </div>
+    <div class="form-check form-switch custom-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedSound" [(ngModel)]="userNeedSounds" (change)="onSwitchChange('sounds')" (click)="onItemClickItem()">
+      <label class="form-check-label" for="flexSwitchCheckCheckedSound">{{ userNeedSounds ? 'Desactivar sonidos' : 'Activar sonidos' }}</label>
+    </div>
+  </div>
+</div>

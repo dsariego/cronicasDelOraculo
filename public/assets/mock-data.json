@@ -1,0 +1,2040 @@
+{
+  "occupations": [
+    {
+      "name": "Guerrero",
+      "traits": [],
+      "talents": [
+        { "name": "Golpe devastador", "description": "Duplica el daño del primer ataque en combate.", "type": "combat" },
+        { "name": "Defensa implacable", "description": "Reduce el daño recibido en 50%.", "type": "combat" }
+      ],
+      "primary": "vigor",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Mago",
+      "traits": [],
+      "talents": [
+        { "name": "Bola de fuego", "description": "Inflige daño masivo a múltiples enemigos.", "type": "magic" },
+        { "name": "Escudo arcano", "description": "Absorbe daño equivalente a la sabiduría del lanzador.", "type": "magic" }
+      ],
+      "primary": "wisdom",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Explorador",
+      "traits": [],
+      "talents": [
+        { "name": "Tiro certero", "description": "Aumenta la precisión de los ataques a distancia.", "type": "combat" },
+        { "name": "Paso sigiloso", "description": "Permite moverse sin ser detectado.", "type": "exceptional" }
+      ],
+      "primary": "cunning",
+      "secondary": "subterfuge"
+    },
+    {
+      "name": "Bardo",
+      "traits": [],
+      "talents": [
+        { "name": "Canción inspiradora", "description": "Aumenta la moral de los aliados.", "type": "exceptional" },
+        { "name": "Discurso persuasivo", "description": "Permite convencer a un enemigo de rendirse.", "type": "exceptional" }
+      ],
+      "primary": "subterfuge",
+      "secondary": "wisdom"
+    },
+    {
+      "name": "Clérigo",
+      "traits": [],
+      "talents": [
+        { "name": "Curación divina", "description": "Restaurar la salud de un aliado.", "type": "magic" },
+        { "name": "Protección celestial", "description": "Brinda resistencia a los ataques mágicos.", "type": "magic" }
+      ],
+      "primary": "wisdom",
+      "secondary": "vigor"
+    },
+    {
+      "name": "Asesino",
+      "traits": [],
+      "talents": [
+        { "name": "Golpe mortal", "description": "El siguiente golpe inflige daño crítico.", "type": "combat" },
+        { "name": "Desvanecerse", "description": "Permite ocultarse en las sombras.", "type": "exceptional" }
+      ],
+      "primary": "subterfuge",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Paladín",
+      "traits": [],
+      "talents": [
+        { "name": "Golpe de la luz", "description": "Inflige daño a los enemigos y cura a los aliados.", "type": "combat" },
+        { "name": "Escudo de la fe", "description": "Reduce el daño recibido por los aliados cercanos.", "type": "exceptional" }
+      ],
+      "primary": "vigor",
+      "secondary": "wisdom"
+    },
+    {
+      "name": "Hechicero",
+      "traits": [],
+      "talents": [
+        { "name": "Rayo arcano", "description": "Lanza un rayo de energía mágica.", "type": "magic" },
+        { "name": "Fuerza mental", "description": "Aumenta el control sobre los hechizos.", "type": "magic" }
+      ],
+      "primary": "wisdom",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Ladrón",
+      "traits": [],
+      "talents": [
+        { "name": "Robo sigiloso", "description": "Permite robar sin ser detectado.", "type": "exceptional" },
+        { "name": "Desactivar trampas", "description": "Desactiva trampas de forma segura.", "type": "exceptional" }
+      ],
+      "primary": "subterfuge",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Arquero",
+      "traits": [],
+      "talents": [
+        { "name": "Disparo a larga distancia", "description": "Aumenta la efectividad en disparos a larga distancia.", "type": "combat" },
+        { "name": "Trampa explosiva", "description": "Coloca una trampa que explota al ser activada.", "type": "exceptional" }
+      ],
+      "primary": "vigor",
+      "secondary": "cunning"
+    },
+    {
+      "name": "Sabio",
+      "traits": [],
+      "talents": [
+        { "name": "Conocimiento arcano", "description": "Otorga conocimiento sobre magia y sus secretos.", "type": "magic" },
+        { "name": "Visión clarividente", "description": "Permite predecir los movimientos enemigos.", "type": "exceptional" }
+      ],
+      "primary": "wisdom",
+      "secondary": "subterfuge"
+    },
+    {
+      "name": "Cazador",
+      "traits": [],
+      "talents": [
+        { "name": "Rastro", "description": "Permite seguir el rastro de un objetivo.", "type": "exceptional" },
+        { "name": "Flecha venenosa", "description": "Lanza una flecha que envenena al objetivo.", "type": "combat" }
+      ],
+      "primary": "vigor",
+      "secondary": "subterfuge"
+    }
+  ],
+  "objectives": [
+    {
+      "id": "obj1",
+      "name": "Rescatar al aldeano",
+      "description": "Encuentra y salva al aldeano perdido en el bosque oscuro.",
+      "type": "principal"
+    },
+    {
+      "id": "obj2",
+      "name": "Recuperar el artefacto antiguo",
+      "description": "Busca y trae de vuelta el artefacto escondido en las montañas heladas.",
+      "type": "principal"
+    },
+    {
+      "id": "obj3",
+      "name": "Eliminar al jefe demoníaco",
+      "description": "Derrota al demonio que gobierna la ciénaga maldita.",
+      "type": "principal"
+    },
+    {
+      "id": "obj4",
+      "name": "Recolectar hierbas medicinales",
+      "description": "Encuentra y recolecta hierbas raras para el alquimista del pueblo.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj5",
+      "name": "Ayudar al mercader",
+      "description": "Escolta al mercader a través del camino peligroso hasta la ciudad cercana.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj6",
+      "name": "Reparar el puente roto",
+      "description": "Encuentra materiales y repara el puente para reabrir la ruta comercial.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj7",
+      "name": "Cazar al lobo salvaje",
+      "description": "Elimina al lobo que está aterrorizando a los granjeros.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj8",
+      "name": "Explorar la cueva oculta",
+      "description": "Investiga la cueva misteriosa en la colina al sur del pueblo.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj9",
+      "name": "Recolectar frutas exóticas",
+      "description": "Encuentra frutas raras para el banquete del rey.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj10",
+      "name": "Entrenar con el herrero",
+      "description": "Ayuda al herrero y mejora tus habilidades de combate.",
+      "type": "secundaria"
+    },
+    {
+      "id": "obj11",
+      "name": "Proteger la caravana",
+      "description": "Acompaña y protege una caravana que transporta bienes valiosos.",
+      "type": "principal"
+    },
+    {
+      "id": "obj12",
+      "name": "Descubrir al traidor",
+      "description": "Investiga quién está pasando información al enemigo en secreto.",
+      "type": "principal"
+    },
+    {
+      "id": "obj13",
+      "name": "Liberar al prisionero noble",
+      "description": "Rescata al noble encarcelado en la fortaleza enemiga.",
+      "type": "principal"
+    },
+    {
+      "id": "obj14",
+      "name": "Defender el castillo",
+      "description": "Defiende el castillo del ataque de las hordas invasoras.",
+      "type": "principal"
+    },
+    {
+      "id": "obj15",
+      "name": "Recuperar la espada legendaria",
+      "description": "Encuentra y recupera la espada mítica que podría cambiar el destino de la batalla.",
+      "type": "principal"
+    },
+    {
+      "id": "obj16",
+      "name": "Completar el diario del aventurero",
+      "description": "Llena las páginas del diario con todos los secretos descubiertos en tus viajes.",
+      "type": "personal"
+    },
+    {
+      "id": "obj17",
+      "name": "Vengar a tu familia",
+      "description": "Encuentra y ajusticia al responsable de la caída de tu clan.",
+      "type": "personal"
+    },
+    {
+      "id": "obj18",
+      "name": "Reconstruir tu hogar",
+      "description": "Reúne los recursos necesarios para reconstruir tu pueblo natal.",
+      "type": "personal"
+    }
+  ],
+  "enemies": [
+    {
+      "name": "Zombie",
+      "label": "Zombie",
+      "description": "Un cadáver reanimado que vaga en busca de carne viva.",
+      "enemyType": "undead",
+      "environmentType": ["Catacombs", "DarkMarsh", "HauntedGround"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 4},
+        {"name": "wisdom", "label": "Sabiduría", "value": 4},
+        {"name": "cunning", "label": "Astucia", "value": 3}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 17,
+      "combat": 10,
+      "armor": 1,
+      "damage": 3
+    },
+    {
+      "name": "Esqueleto",
+      "label": "Esqueleto",
+      "description": "Guerrero no muerto que protege mazmorras y ruinas.",
+      "enemyType": "undead",
+      "environmentType": ["Dungeon", "Catacombs", "Ruins"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 5},
+        {"name": "wisdom", "label": "Sabiduría", "value": 3},
+        {"name": "cunning", "label": "Astucia", "value": 4}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 16,
+      "combat": 11,
+      "armor": 2,
+      "damage": 2
+    },
+    {
+      "name": "Fantasma",
+      "label": "Fantasma",
+      "description": "Un espíritu inquieto que aterroriza a los vivos.",
+      "enemyType": "undead",
+      "environmentType": ["HauntedGround", "Catacombs", "DarkMarsh"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 4},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 6},
+        {"name": "wisdom", "label": "Sabiduría", "value": 4},
+        {"name": "cunning", "label": "Astucia", "value": 4}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 14,
+      "combat": 11,
+      "armor": 0,
+      "damage": 1
+    },
+    {
+      "name": "Espectro",
+      "label": "Espectro",
+      "description": "Una aparición translúcida que provoca miedo en los vivos.",
+      "enemyType": "undead",
+      "environmentType": ["HauntedGround", "Ruins", "DarkMarsh"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 3},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 5},
+        {"name": "wisdom", "label": "Sabiduría", "value": 5},
+        {"name": "cunning", "label": "Astucia", "value": 5}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 13,
+      "combat": 9,
+      "armor": 1,
+      "damage": 3
+    },
+    {
+      "name": "Gárgola Animada",
+      "label": "Gárgola Animada",
+      "description": "Una estatua animada que protege ruinas antiguas.",
+      "enemyType": "undead",
+      "environmentType": ["Bastion", "Ruins", "Dungeon"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 5},
+        {"name": "wisdom", "label": "Sabiduría", "value": 5},
+        {"name": "cunning", "label": "Astucia", "value": 3}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 15,
+      "combat": 11,
+      "armor": 3,
+      "damage": 1
+    },
+    {
+      "name": "Sombramante",
+      "label": "Sombramante",
+      "description": "Un hechicero no muerto envuelto en sombras y misterio.",
+      "enemyType": "undead",
+      "environmentType": ["DarkMarsh", "HauntedGround", "Dungeon"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 4},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 5},
+        {"name": "wisdom", "label": "Sabiduría", "value": 5},
+        {"name": "cunning", "label": "Astucia", "value": 5}
+      ],
+      "experience": 10,
+      "powerLevel": 1,
+      "life": 15,
+      "combat": 10,
+      "armor": 2,
+      "damage": 1
+    },
+    {
+      "name": "Vampiro neonato",
+      "label": "Vampiro neonato",
+      "description": "Una criatura de la noche que se alimenta de sangre. Aunque todavía es jóven, es un gran peligro.",
+      "enemyType": "undead",
+      "environmentType": ["Urban", "HauntedGround", "Ruins"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 7},
+        {"name": "wisdom", "label": "Sabiduría", "value": 4},
+        {"name": "cunning", "label": "Astucia", "value": 6}
+      ],
+      "experience": 25,
+      "powerLevel": 2,
+      "life": 22,
+      "combat": 14,
+      "armor": 2,
+      "damage": 4
+    },
+    {
+      "name": "Gólem de Huesos",
+      "label": "Gólem de Huesos",
+      "description": "Una amalgama de huesos animados por magia oscura.",
+      "enemyType": "undead",
+      "environmentType": ["Dungeon", "Ruins", "HauntedGround", "Catacombs"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 7},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 5},
+        {"name": "wisdom", "label": "Sabiduría", "value": 5},
+        {"name": "cunning", "label": "Astucia", "value": 4}
+      ],
+      "experience": 25,
+      "powerLevel": 2,
+      "life": 24,
+      "combat": 14,
+      "armor": 4,
+      "damage": 2
+    },
+    {
+      "name": "Espectro de Batalla",
+      "label": "Espectro de Batalla",
+      "description": "El espíritu de un guerrero caído, lleno de ira.",
+      "enemyType": "undead",
+      "environmentType": ["Catacombs", "HauntedGround", "Ruins"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 4},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 6},
+        {"name": "wisdom", "label": "Sabiduría", "value": 6},
+        {"name": "cunning", "label": "Astucia", "value": 6}
+      ],
+      "experience": 25,
+      "powerLevel": 2,
+      "life": 20,
+      "combat": 12,
+      "armor": 3,
+      "damage": 3
+    },
+    {
+      "name": "Caballero Espectral",
+      "label": "Caballero Espectral",
+      "description": "Un guerrero maldito que cabalga entre las sombras.",
+      "enemyType": "undead",
+      "environmentType": ["Ruins", "Plains", "HauntedGround"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 6},
+        {"name": "wisdom", "label": "Sabiduría", "value": 5},
+        {"name": "cunning", "label": "Astucia", "value": 4}
+      ],
+      "experience": 25,
+      "powerLevel": 2,
+      "life": 25,
+      "combat": 14,
+      "armor": 2,
+      "damage": 3
+    },
+    {
+      "name": "Liche",
+      "label": "Liche",
+      "description": "Un poderoso mago no muerto con conocimientos oscuros.",
+      "enemyType": "undead",
+      "environmentType": ["HauntedGround", "DarkMarsh", "Dungeon"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 6},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 6},
+        {"name": "wisdom", "label": "Sabiduría", "value": 8},
+        {"name": "cunning", "label": "Astucia", "value": 6}
+      ],
+      "experience": 50,
+      "powerLevel": 3,
+      "life": 34,
+      "combat": 15,
+      "armor": 4,
+      "damage": 4
+    },
+    {
+      "name": "Señor de las Criptas",
+      "label": "Señor de las Criptas",
+      "description": "Un antiguo sacerdote no muerto que protege secretos oscuros en los rincones más profundos de las catacumbas.",
+      "enemyType": "undead",
+      "environmentType": ["Catacombs", "Dungeon", "HauntedGround"],
+      "aspects": [
+        {"name": "vigor", "label": "Vigor", "value": 5},
+        {"name": "subterfuge", "label": "Subterfugio", "value": 6},
+        {"name": "wisdom", "label": "Sabiduría", "value": 7},
+        {"name": "cunning", "label": "Astucia", "value": 7}
+      ],
+      "experience": 50,
+      "powerLevel": 3,
+      "life": 35,
+      "combat": 15,
+      "armor": 3,
+      "damage": 2
+    }
+  ],
+  "enemyTypes": [
+    {
+      "name": "undead",
+      "label": "No Muerto",
+      "enemies": [
+        "Zombie",
+        "Esqueleto",
+        "Liche",
+        "Fantasma",
+        "Vampiro",
+        "Gólem de Huesos"
+      ]
+    },
+    {
+      "name": "beast",
+      "label": "Bestia",
+      "enemies": [
+        "Lobo Salvaje",
+        "Oso Furioso",
+        "Serpiente Gigante",
+        "Tigre de Sombra",
+        "Rata Colosal",
+        "Avestruz de Terror"
+      ]
+    },
+    {
+      "name": "elemental",
+      "label": "Elemental",
+      "enemies": [
+        "Elemental de Fuego",
+        "Elemental de Agua",
+        "Elemental de Aire",
+        "Elemental de Tierra",
+        "Elemental de Hielo",
+        "Elemental de Rayo"
+      ]
+    },
+    {
+      "name": "giant",
+      "label": "Gigante",
+      "enemies": [
+        "Gigante de Montaña",
+        "Gigante de Fuego",
+        "Gigante de Hielo",
+        "Gigante de Piedra",
+        "Gigante Ciclópeo",
+        "Gigante Marino"
+      ]
+    },
+    {
+      "name": "demon",
+      "label": "Demonio",
+      "enemies": [
+        "Diablillo",
+        "Súcubo",
+        "Señor del Abismo",
+        "Demonio de Fuego",
+        "Guardián del Inframundo",
+        "Pesadilla Viviente"
+      ]
+    },
+    {
+      "name": "fantasticBeast",
+      "label": "Bestias Fantásticas",
+      "enemies": [
+        "Grifo",
+        "Quimera",
+        "Mantícora",
+        "Basilisco",
+        "Hipogrifo",
+        "Gárgola Viviente"
+      ]
+    },
+    {
+      "name": "parasite",
+      "label": "Parásito",
+      "enemies": [
+        "Parásito Cerebral",
+        "Larva Infectante",
+        "Colonia de Hongos Vivientes",
+        "Enjambre de Insectos Asesinos",
+        "Espora Mutante",
+        "Sanguijuela del Vacío"
+      ]
+    },
+    {
+      "name": "corrupted",
+      "label": "Corrupto",
+      "enemies": [
+        "Caballero Maldito",
+        "Ángel Corrompido",
+        "Bestia Desfigurada",
+        "Arconte Caído",
+        "Sacerdote Oscuro",
+        "Criatura del Vórtice"
+      ]
+    },
+    {
+      "name": "caothic",
+      "label": "Caóticos",
+      "enemies": [
+        "Horror de Carne",
+        "Terror de Tres Cabezas",
+        "Behemoth Contaminado",
+        "Mastodonte Inestable",
+        "Quimera Mutante",
+        "Monstruosidad Radiante"
+      ]
+    },
+    {
+      "name": "corruptedNature",
+      "label": "Naturaleza Corrompida",
+      "enemies": [
+        "Árbol Retorcido",
+        "Enredadera Asesina",
+        "Colmena Carnívora",
+        "Elemental de Espinas",
+        "Flor del Abismo",
+        "Bestia del Bosque Oscuro"
+      ]
+    },
+    {
+      "name": "construct",
+      "label": "Constructo",
+      "enemies": [
+        "Autómata de Hierro",
+        "Gólem de Arcilla",
+        "Gólem de Piedra",
+        "Guardia de Hierro",
+        "Marioneta Maldita",
+        "Guardian del Santuario"
+      ]
+    },
+    {
+      "name": "aberration",
+      "label": "Aberración",
+      "enemies": [
+        "Mente Maestra",
+        "Engendro Tentacular",
+        "Ojo Tirano",
+        "Cazador del Abismo",
+        "Larva Cósmica",
+        "Mutante Corrupto"
+      ]
+    },
+    {
+      "name": "fey",
+      "label": "Feérico",
+      "enemies": [
+        "Hada Maligna",
+        "Duende Travieso",
+        "Espíritu del Bosque",
+        "Centauro Furioso",
+        "Hombre Árbol",
+        "Fénix Maldito"
+      ]
+    },
+    {
+      "name": "humanoid",
+      "label": "Humanoide",
+      "enemies": [
+        "Bandido",
+        "Cultista",
+        "Mercenario",
+        "Mago Oscuro",
+        "Rey Tirano",
+        "Guerrero Caído"
+      ]
+    }
+  ],
+  "sceneTypes": [
+    {
+      "apiName": "dark_forest",
+      "label": "Bosque Oscuro",
+      "description": "Un bosque sombrío donde cada sombra parece albergar un peligro."
+    },
+    {
+      "apiName": "icy_mountains",
+      "label": "Montañas Heladas",
+      "description": "Un lugar inhóspito cubierto de nieve, con caminos traicioneros."
+    },
+    {
+      "apiName": "cursed_swamp",
+      "label": "Ciénaga Maldita",
+      "description": "Un pantano insalubre lleno de trampas y criaturas hostiles."
+    }
+  ],
+  "environmentTypes": [
+  {
+    "name": "Urban",
+    "label": "Urbano",
+    "description": "Calles sombrías, mercados y plazas desoladas",
+    "color": "#4B4B4B"
+  },
+  {
+    "name": "Rural",
+    "label": "Rural",
+    "description": "Aldeas apartadas y campos labrados bajo cielos grises",
+    "color": "#A2C523"
+  },
+  {
+    "name": "Dungeon",
+    "label": "Mazmorra",
+    "description": "Pasillos oscuros llenos de secretos y peligros",
+    "color": "#3B3B6D"
+  },
+  {
+    "name": "Wilderness",
+    "label": "Zona Salvaje",
+    "description": "Áreas inhóspitas, plagadas de fieras y bandidos",
+    "color": "#6E502D"
+  },
+  {
+    "name": "Forest",
+    "label": "Bosque",
+    "description": "Un bosque oscuro donde la luz apenas atraviesa las ramas",
+    "color": "#2E4B29"
+  },
+  {
+    "name": "Borderlands",
+    "label": "Zona Fronteriza",
+    "description": "Tierras en disputa, repletas de caos y ruinas",
+    "color": "#8B5A2B"
+  },
+  {
+    "name": "Bastion",
+    "label": "Bastión",
+    "description": "Fortalezas antiguas, habitadas o abandonadas",
+    "color": "#606060"
+  },
+  {
+    "name": "Swamp",
+    "label": "Pantano",
+    "description": "Terrenos fangosos, húmedos y llenos de peligros ocultos",
+    "color": "#375D2B"
+  },
+  {
+    "name": "Mountains",
+    "label": "Montañas",
+    "description": "Cumbres inhóspitas, donde el viento y el frío son letales",
+    "color": "#6B91C9"
+  },
+  {
+    "name": "Coast",
+    "label": "Costa",
+    "description": "Litorales oscuros, azotados por tormentas y criaturas marinas",
+    "color": "#4A708B"
+  },
+  {
+    "name": "Catacombs",
+    "label": "Catacumbas",
+    "description": "Red de túneles bajo las ciudades, llenos de horrores",
+    "color": "#3B3B3B"
+  },
+  {
+    "name": "Ruins",
+    "label": "Ruinas",
+    "description": "Estructuras antiguas, olvidadas y cargadas de secretos",
+    "color": "#8B6A4B"
+  },
+  {
+    "name": "Plains",
+    "label": "Llanuras",
+    "description": "Tierras abiertas y vastas, expuestas al peligro",
+    "color": "#D9C27C"
+  },
+  {
+    "name": "DarkMarsh",
+    "label": "Ciénaga Oscura",
+    "description": "Un lugar maldito donde pocos se atreven a entrar",
+    "color": "#2F4F2F"
+  },
+  {
+    "name": "HauntedGround",
+    "label": "Terrenos Malditos",
+    "description": "Regiones envueltas en misterio y superstición",
+    "color": "#4A3B6A"
+  },
+  {
+    "name": "Tundra",
+    "label": "Tundra",
+    "description": "Extensiones heladas, desoladas y peligrosas",
+    "color": "#BCCBE7"
+  }
+  ],
+  "seedHistory": [
+    {
+      "label": "Amor",
+      "progress": [
+        "El aventurero recibe una misión secreta en medio de un reino dividido por la guerra, y se encuentra con un amor prohibido, cuyo destino está marcado por las diferencias sociales",
+        "El aventurero comienza a involucrarse con los amantes y descubre los riesgos asociados a su misión. Debe escoltar mensajes secretos entre los dos amantes mientras evita las patrullas enemigas",
+        "El protagonista es testigo de una traición dentro del círculo cercano a los amantes, lo que pone en peligro su misión y obliga al aventurero a tomar decisiones rápidas. Un amante es capturado por su propia familia y el aventurero decide liberar a su amada",
+        "El aventurero se infiltra en un castillo fortificado para liberar a uno de los amantes. En el camino, enfrenta soldados, trampas y la creciente desconfianza de aquellos que están involucrados en la guerra",
+        "Al liberarse uno de los amantes, la situación se complica cuando el aventurero se da cuenta de que la misión ha trascendido el simple rescate; los dos amantes ahora son símbolos de resistencia y la guerra podría cambiar dependiendo del éxito de la misión",
+        "El aventurero es traicionado por un aliado cercano, lo que pone en peligro todo el esfuerzo. Un alto el fuego que había negociado se rompe y el castillo es atacado por completo, dejando al aventurero atrapado en una batalla desesperada por sobrevivir",
+        "El aventurero, ahora transformado por la experiencia, enfrenta a los principales antagonistas: el líder militar que persigue a los amantes y aquellos que quieren mantener la guerra en marcha. Un enfrentamiento épico ocurre en la plaza del castillo",
+        "El aventurero logra negociar un alto el fuego temporal entre los bandos, asegurando una ruta de escape para los amantes. Sin embargo, el costo es alto y muchos sacrificios se hacen para alcanzar la paz",
+        "Aunque los amantes escapan a un lugar seguro, el aventurero reflexiona sobre el sacrificio, el amor y la política. La misión que parecía ser un simple acto de espionaje se convierte en una lucha por la humanidad, y el protagonista encuentra un nuevo propósito en la vida"
+      ],
+      "initialEvent": "Un amor prohibido florece en medio de un reino en guerra. El protagonista, un noble o guerrero, se enamora de una persona de un estatus social diferente o incluso enemiga",
+      "finalEventVictory": "El amor trasciende las barreras sociales y políticas, logrando que ambos personajes escapen a un lugar seguro, donde pueden vivir sin restricciones",
+      "finalEventDefeat": "El amor se ve trágicamente aplastado por el destino, con uno de los amantes muerto o traicionado, dejando al sobreviviente sumido en un dolor interminable",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Venganza",
+      "progress": [
+        "El aventurero investiga las motivaciones del traidor, descubriendo sus oscuros secretos",
+        "El aventurero ayuda a la víctima a preparar un duelo estratégico contra el traidor",
+        "El aventurero actúa como intermediario, intentando exponer la traición públicamente",
+        "El aventurero se enfrenta al traidor en un duelo que desafía su honor",
+        "El aventurero realiza un sacrificio personal para asegurar que el traidor reciba su merecido castigo",
+        "El aventurero obtiene la verdad detrás de la traición, lo que cambia su perspectiva sobre la venganza",
+        "El aventurero se da cuenta de que la venganza ha consumido su vida y debe tomar una decisión crucial",
+        "El aventurero lleva a cabo la venganza, pero descubre que el precio ha sido más alto de lo que imaginaba",
+        "El aventurero reflexiona sobre la justicia y el precio de la venganza, buscando redención tras la lucha"
+      ],
+      "initialEvent": "El protagonista es traicionado por su mejor amigo o mentor, causando una pérdida irreparable o humillación pública",
+      "finalEventVictory": "La venganza se lleva a cabo de manera justa, restaurando el honor perdido y destruyendo al traidor de la manera más simbólica posible",
+      "finalEventDefeat": "El deseo de venganza consume al protagonista, quien termina perdiendo su humanidad y cayendo en la oscuridad, solo para darse cuenta demasiado tarde que su venganza nunca resolvió la herida original",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Muerte",
+      "progress": [
+        "El aventurero recopila pruebas para identificar a los responsables de la emboscada",
+        "El aventurero lidera una expedición para capturar a los culpables y llevarlos ante la justicia",
+        "El aventurero ayuda a la familia a superar su dolor mientras persigue una solución más profunda",
+        "El aventurero enfrenta las implicaciones de la muerte y cómo esta afecta a su visión del mundo",
+        "El aventurero se enfrenta a los responsables de la emboscada, arriesgando todo por justicia",
+        "El aventurero busca respuestas más allá de la justicia, enfrentándose a las heridas emocionales de la pérdida",
+        "El aventurero toma decisiones difíciles, lo que lleva a un desenlace inesperado",
+        "El aventurero recibe la justicia, pero la paz no llega sin un alto costo personal",
+        "El aventurero honra la memoria de su ser querido, encontrando paz a través del sacrificio y la resolución"
+      ],
+      "initialEvent": "Un ser querido o compañero cae en una emboscada, dejando al protagonista buscando justicia o simplemente respuestas",
+      "finalEventVictory": "La muerte del ser querido se honra, y el protagonista obtiene la paz al descubrir la verdad detrás de su sacrificio o encontrar justicia para su muerte",
+      "finalEventDefeat": "La muerte es la semilla de una espiral de tragedia, donde el protagonista no puede detener el caos generado por su sed de venganza, perdiendo todo lo que le queda en el proceso",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Odio",
+      "progress": [
+        "El aventurero ayuda al campesino a reunir pruebas contra el noble para presentarlas al consejo local",
+        "El aventurero protege al campesino de los intentos del noble por silenciarlo",
+        "El aventurero organiza un enfrentamiento final entre el campesino y el noble",
+        "El aventurero se enfrenta a la primera gran prueba que desafía su odio hacia el noble",
+        "El aventurero se da cuenta de que su odio está siendo usado en su contra",
+        "El aventurero empieza a cuestionar la justicia de su venganza y el impacto del odio en su vida",
+        "El aventurero hace frente a la posibilidad de que su odio lo transforme en lo que más detesta",
+        "El aventurero encuentra una oportunidad para derrotar al noble y liberar su alma de la oscuridad",
+        "El aventurero se redime, destruyendo tanto al enemigo como la oscuridad interna que lo consumía"
+      ],
+      "initialEvent": "El protagonista es marcado por un evento o traición que genera una profunda sensación de odio hacia una figura importante (enemigo, amigo, mentor)",
+      "finalEventVictory": "El odio se convierte en fuerza impulsora para superar obstáculos, finalmente derrotando al enemigo o traidor y liberándose de la oscuridad interna",
+      "finalEventDefeat": "El odio consume al protagonista, transformándolo en aquello que odiaba, y terminando atrapado en un ciclo perpetuo de violencia y sufrimiento",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Redención",
+      "progress": [
+        "El aventurero ayuda al bandido a devolver bienes robados a las aldeas afectadas",
+        "El aventurero organiza un encuentro entre el bandido y las familias afectadas para pedir perdón",
+        "El aventurero guía al bandido en una misión peligrosa para proteger a los mismos pueblos que antes atacó",
+        "El aventurero se enfrenta a las primeras dudas sobre si el bandido merece la redención",
+        "El aventurero pone en duda la sinceridad del bandido, pero decide ayudarle por el bien de las aldeas",
+        "El aventurero se ve forzado a hacer sacrificios personales para apoyar la redención del bandido",
+        "El aventurero descubre la verdadera motivación del bandido y enfrenta un dilema moral",
+        "El aventurero ayuda al bandido en su misión final, sacrificándose por el bien común",
+        "El aventurero alcanza la paz interior tras ayudar al bandido a completar su redención, dejando atrás su propio pasado"
+      ],
+      "initialEvent": "Un personaje con un pasado oscuro o malhechor busca redención tras una serie de malas decisiones que lo han condenado",
+      "finalEventVictory": "El personaje se sacrifica por un bien mayor, redimiéndose a través de sus acciones y finalmente ganando la paz interior",
+      "finalEventDefeat": "A pesar de sus esfuerzos por redimirse, el personaje sucumbe a sus errores pasados, y el arrepentimiento es lo único que le queda, perdiendo su alma en el proceso",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Autoconocimiento",
+      "progress": [
+        "El aventurero acompaña al monje en su peregrinación a un lugar sagrado",
+        "El aventurero protege al monje de bandidos y pruebas físicas durante su viaje",
+        "El aventurero ayuda al monje a enfrentar una visión o profecía crucial para su autodescubrimiento",
+        "El aventurero se enfrenta a sus propios demonios internos mientras acompaña al monje",
+        "El aventurero pone en duda la sabiduría del monje, pero sigue el viaje con esperanza",
+        "El aventurero comienza a descubrir sus propias respuestas a las preguntas existenciales",
+        "El aventurero experimenta una profunda transformación emocional tras una revelación personal",
+        "El aventurero alcanza un momento de claridad, donde encuentra su propósito en el viaje",
+        "El aventurero se enfrenta a un desafío final que pone a prueba todo lo aprendido y lo lleva a la autoaceptación"
+      ],
+      "initialEvent": "El protagonista comienza un viaje de introspección, enfrentando conflictos internos y externos para entender su verdadero propósito o identidad",
+      "finalEventVictory": "El protagonista descubre su verdadero ser, alcanzando un equilibrio entre sus deseos y su destino, tomando control de su vida con nuevas perspectivas",
+      "finalEventDefeat": "El viaje de autoconocimiento se convierte en una lucha interminable, donde el protagonista nunca encuentra las respuestas que busca, atrapado en la duda y el vacío",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Liberación",
+      "progress": [
+        "El aventurero ayuda al esclavo a encontrar aliados dentro del grupo de cautivos",
+        "El aventurero traza un plan para liberar a todos los esclavos durante una festividad importante",
+        "El aventurero guía al esclavo en su huida a través de territorio hostil",
+        "El aventurero enfrenta la difícil decisión de arriesgarlo todo por la libertad de los demás",
+        "El aventurero se enfrenta a los guardianes que protegen a los opresores, luchando por la justicia",
+        "El aventurero lucha con la desesperanza, pero encuentra el coraje para seguir adelante",
+        "El aventurero supera un obstáculo clave que pone en peligro la liberación",
+        "El aventurero consigue la liberación, pero descubre que la verdadera libertad no es solo física",
+        "El aventurero enfrenta la realidad de la opresión interna, liberándose finalmente de sus propios miedos"
+      ],
+      "initialEvent": "El protagonista es atrapado en una situación opresiva, ya sea física, mental o emocionalmente, y busca una forma de liberarse",
+      "finalEventVictory": "La liberación se logra, ya sea rompiendo cadenas físicas o liberándose de las restricciones mentales, lo que permite al protagonista alcanzar su máximo potencial",
+      "finalEventDefeat": "La lucha por la liberación fracasa, y el protagonista es consumido por las cadenas que intentaba romper, perdiendo su libertad en el proceso",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Huida",
+      "type": "Senda de aventura",
+      "progress": [
+        "El aventurero organiza un plan de escape para la familia bajo el amparo de la noche",
+        "El aventurero distrae a los perseguidores mientras la familia encuentra un escondite seguro",
+        "El aventurero ayuda a la familia a cruzar un peligroso río para llegar a un nuevo refugio",
+        "El aventurero se enfrenta a un obstáculo inesperado mientras huye, poniendo en riesgo la seguridad de la familia",
+        "El aventurero organiza una emboscada para deshacerse de los perseguidores y ganar tiempo",
+        "El aventurero se encuentra con un traidor en su grupo, lo que pone en peligro el plan de escape",
+        "El aventurero toma una decisión difícil para proteger a la familia, sacrificando algo personal",
+        "El aventurero logra encontrar un refugio seguro para la familia, pero las amenazas aún persisten",
+        "El aventurero finalmente logra escapar y empezar una nueva vida lejos de las sombras que lo perseguían"
+      ],
+      "initialEvent": "El protagonista se ve forzado a huir por su vida debido a una amenaza inminente, ya sea de un enemigo o de su propio pasado",
+      "finalEventVictory": "El protagonista logra escapar y empezar una nueva vida lejos de las sombras que lo perseguían",
+      "finalEventDefeat": "La huida es infructuosa, y el protagonista es alcanzado por su pasado, enfrentando consecuencias devastadoras por sus intentos de evadirlo"
+    },
+    {
+      "label": "Traición",
+      "type": "Senda de aventura",
+      "progress": [
+        "El aventurero ayuda al caballero a escapar de la emboscada que le han tendido",
+        "El aventurero investiga las razones detrás de la traición del escudero y descubre un secreto oscuro",
+        "El aventurero enfrenta al escudero y decide si redimirlo o castigarlo",
+        "El aventurero encuentra una carta secreta que revela más sobre la conspiración en marcha",
+        "El aventurero forma una alianza inesperada con alguien del círculo de los traidores",
+        "El aventurero planea una confrontación final con el escudero, ahora consciente de su verdadero papel",
+        "El aventurero se enfrenta al escudero en un duelo, donde descubre más sobre las motivaciones de su traición",
+        "El aventurero descubre la conexión entre la traición y una amenaza mayor que podría poner en peligro el reino",
+        "La traición es descubierta, el traidor paga por su crimen, y el protagonista emerge más fuerte, con nuevas alianzas forjadas"
+      ],
+      "initialEvent": "El protagonista es traicionado por un aliado cercano, alguien en quien confiaba profundamente, lo que lleva a una serie de complicaciones",
+      "finalEventVictory": "La traición es descubierta, el traidor paga por su crimen, y el protagonista emerge más fuerte, con nuevas alianzas forjadas",
+      "finalEventDefeat": "La traición da paso a una desconfianza profunda que jamás se supera, y el protagonista termina aislado, incapaz de confiar en nadie más"
+    },
+    {
+      "label": "Ambición",
+      "type": "Senda de aventura",
+      "progress": [
+        "El aventurero ayuda al mago a encontrar pistas sobre el paradero del artefacto",
+        "El aventurero lidia con las consecuencias de los actos del mago, enfrentándose a criaturas invocadas por su ambición",
+        "El aventurero intenta convencer al mago de abandonar su búsqueda antes de que sea demasiado tarde",
+        "El aventurero descubre los efectos devastadores que el artefacto está causando en el mundo",
+        "El aventurero se enfrenta a un dilema moral, debatiendo si detener al mago o arriesgarlo todo por el artefacto",
+        "El aventurero lucha contra una poderosa criatura que ha sido desatada por la codicia del mago",
+        "El aventurero se infiltra en el refugio del mago para detener la invocación del artefacto",
+        "El aventurero enfrenta una batalla épica con el mago, que ha sucumbido por completo a la tentación del artefacto",
+        "El mago renuncia al artefacto y cierra el portal que amenazaba con destruir el reino"
+      ],
+      "initialEvent": "Un mago codicia un artefacto legendario, dispuesto a cualquier cosa para conseguirlo, incluso desatar fuerzas peligrosas",
+      "finalEventVictory": "El mago renuncia al artefacto y cierra el portal que amenazaba con destruir el reino",
+      "finalEventDefeat": "El artefacto consume al mago y desata un cataclismo que deja cicatrices permanentes en el mundo"
+    },
+    {
+      "label": "Honor",
+      "type": "Senda de aventura",
+      "progress": [
+        "El aventurero recopila pruebas que refutan las acusaciones contra el guerrero",
+        "El aventurero organiza un duelo de honor entre el guerrero y su acusador",
+        "El aventurero expone a los verdaderos responsables de la conspiración que arruinó al guerrero",
+        "El aventurero se enfrenta a uno de los conspiradores en un combate individual",
+        "El aventurero descubre un secreto que puede cambiar el curso del duelo y restaurar la honra del guerrero",
+        "El aventurero organiza un tribunal para exponer la verdad detrás de las acusaciones",
+        "El aventurero enfrenta las presiones políticas que quieren evitar que el guerrero recupere su honor",
+        "El aventurero se enfrenta a un dilema sobre si continuar luchando por el honor o permitir que el guerrero se retire",
+        "El guerrero recupera su honor y se convierte en un símbolo de justicia"
+      ],
+      "initialEvent": "Un guerrero deshonrado busca limpiar su nombre tras ser acusado falsamente de cobardía en batalla",
+      "finalEventVictory": "El guerrero recupera su honor y se convierte en un símbolo de justicia",
+      "finalEventDefeat": "El guerrero muere intentando limpiar su nombre, dejando tras de sí una leyenda trágica"
+    },
+    {
+      "label": "Justicia",
+      "type": "Senda de aventura",
+      "progress": [
+        "El aventurero ayuda a los aldeanos a recopilar pruebas contra el juez",
+        "El aventurero organiza una revuelta pacífica para exponer públicamente la corrupción",
+        "El aventurero enfrenta al juez en un juicio liderado por una autoridad superior",
+        "El aventurero descubre que la corrupción es más profunda de lo que pensaba, alcanzando a figuras de mayor poder",
+        "El aventurero se infiltra en el círculo cercano al juez para conseguir pruebas secretas",
+        "El aventurero se enfrenta a un dilema moral sobre hasta dónde está dispuesto a llegar para obtener justicia",
+        "El aventurero organiza un motín para liberar a los inocentes que están siendo oprimidos por el sistema judicial corrupto",
+        "El aventurero organiza una confrontación pública con el juez en la plaza central",
+        "La justicia se cumple de manera equitativa, y el protagonista siente que el equilibrio ha sido restaurado"
+      ],
+      "initialEvent": "El protagonista busca hacer justicia por un crimen o una injusticia grave, ya sea hacia ellos mismos o hacia otros",
+      "finalEventVictory": "La justicia se cumple de manera equitativa, y el protagonista siente que el equilibrio ha sido restaurado",
+      "finalEventDefeat": "La búsqueda de justicia se ve corrompida por el sistema, y el protagonista cae en la desesperación, al darse cuenta de que la justicia nunca fue realmente alcanzada"
+    },
+    {
+      "label": "Esperanza",
+      "progress": [
+        "El protagonista encuentra a un grupo de personas que también desean cambiar su destino",
+        "Juntos, el protagonista y su grupo se enfrentan a los obstáculos impuestos por aquellos que desean mantener el orden actual",
+        "El protagonista descubre que su lucha inspira a más personas a unirse a la causa",
+        "El protagonista y su grupo organizan una rebelión contra las fuerzas opresoras",
+        "Se enfrentan a una serie de victorias pequeñas, que refuerzan la moral de la resistencia",
+        "El protagonista se encuentra con un líder carismático que inspira aún más a la causa",
+        "Un sacrificio personal del protagonista eleva el movimiento a un nivel de mayor impacto",
+        "La resistencia comienza a ganar terreno, y la esperanza crece con cada victoria",
+        "A través de sus esfuerzos, el protagonista enciende una llama de esperanza en los corazones de otros, cambiando el destino de la región o del pueblo"
+      ],
+      "initialEvent": "El mundo está sumido en la desesperación y la oscuridad, y el protagonista es una chispa de esperanza que busca cambiar las cosas",
+      "finalEventVictory": "A través de sus esfuerzos, el protagonista enciende una llama de esperanza en los corazones de otros, cambiando el destino de la región o del pueblo",
+      "finalEventDefeat": "La esperanza se pierde, el protagonista cae en la desesperación y la oscuridad, y la luz que alguna vez había mostrado se extingue para siempre",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Perdón",
+      "progress": [
+        "El protagonista enfrenta las consecuencias de sus acciones y busca redención",
+        "El protagonista trata de reparar el daño causado, pero se enfrenta a la resistencia de quienes han sido afectados",
+        "En su búsqueda de perdón, el protagonista se encuentra con personas dispuestas a ofrecer una segunda oportunidad",
+        "El protagonista lucha con sus propios demonios internos, buscando reconciliarse con su pasado",
+        "A pesar de los obstáculos, el protagonista toma una decisión importante para comenzar su proceso de sanación",
+        "El protagonista realiza un acto de sacrificio personal para demostrar su arrepentimiento",
+        "El protagonista se enfrenta a aquellos que le han juzgado, tratando de ganarse su perdón",
+        "Finalmente, el protagonista recibe el perdón de aquellos a quienes más lastimó",
+        "El perdón es alcanzado, y el protagonista puede continuar con su vida, dejando atrás los remordimientos"
+      ],
+      "initialEvent": "El protagonista ha cometido un grave error que ha causado sufrimiento, y ahora busca perdón, ya sea de otros o de sí mismo",
+      "finalEventVictory": "El perdón es alcanzado, y el protagonista puede continuar con su vida, dejando atrás los remordimientos",
+      "finalEventDefeat": "El perdón no llega, y el protagonista vive con el peso de sus acciones, incapaz de encontrar paz",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Destino",
+      "progress": [
+        "El protagonista se enfrenta a visiones del futuro y de su destino, luchando con la idea de si debe aceptarlo o luchar contra él",
+        "El protagonista encuentra a otros que creen que el destino es inmutable y que deben seguirlo sin cuestionarlo",
+        "El protagonista toma decisiones que lo acercan más a su destino, para bien o para mal",
+        "El protagonista se enfrenta a un dilema moral, teniendo que elegir entre su destino predeterminado y su propio deseo",
+        "La lucha interna del protagonista lo lleva a desafiar las visiones del futuro, buscando cambiar lo inevitable",
+        "El protagonista encuentra aliados que lo apoyan en su decisión de luchar contra su destino",
+        "El protagonista se enfrenta a consecuencias imprevistas por desafiar su destino, poniendo en peligro a aquellos que ama",
+        "Enfrentando la verdad de su destino, el protagonista toma una decisión trascendental",
+        "El protagonista acepta su destino y lo redefine, encontrando poder y propósito en su rol dentro del universo"
+      ],
+      "initialEvent": "El protagonista descubre que está vinculado a un destino oscuro o glorioso, y debe decidir si abrazarlo o resistirlo",
+      "finalEventVictory": "El protagonista acepta su destino y lo redefine, encontrando poder y propósito en su rol dentro del universo",
+      "finalEventDefeat": "El protagonista lucha contra su destino y fracasa, sufriendo las consecuencias de intentar escapar de un destino inevitable",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Superación",
+      "progress": [
+        "El protagonista se enfrenta a varios obstáculos que parecen insuperables",
+        "En su lucha por superar el desafío, el protagonista se ve obligado a aprender nuevas habilidades o a cambiar su enfoque",
+        "El protagonista encuentra apoyo en aliados inesperados que le ayudan a superar los momentos más oscuros",
+        "A medida que el protagonista enfrenta más desafíos, comienza a descubrir su verdadera fortaleza",
+        "El protagonista aprende a trabajar en equipo y a confiar en los demás para superar sus miedos",
+        "El protagonista toma decisiones difíciles que ponen a prueba su moralidad y habilidades",
+        "Con cada obstáculo superado, el protagonista siente que se está acercando a su objetivo final",
+        "El protagonista enfrenta su mayor desafío, poniendo a prueba todo lo que ha aprendido",
+        "Superando todos los obstáculos, el protagonista se convierte en una mejor versión de sí mismo, alcanzando la grandeza"
+      ],
+      "initialEvent": "El protagonista enfrenta un desafío abrumador que pone a prueba su cuerpo, mente o alma",
+      "finalEventVictory": "Superando todos los obstáculos, el protagonista se convierte en una mejor versión de sí mismo, alcanzando la grandeza",
+      "finalEventDefeat": "La lucha por la superación termina en fracaso, y el protagonista queda marcado por su incapacidad para superar las dificultades",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Coraje",
+      "progress": [
+        "El protagonista confronta sus temores y encuentra una fuerza interior que no sabía que poseía",
+        "El protagonista se enfrenta a desafíos cada vez más grandes que ponen a prueba su valentía",
+        "El protagonista se enfrenta a una prueba final que pondrá a prueba su coraje como nunca antes",
+        "El protagonista empieza a dudar de su propia fortaleza cuando se enfrenta a obstáculos que parecen insuperables",
+        "El protagonista busca consejo de aquellos que han demostrado valentía en el pasado",
+        "El protagonista descubre nuevas fuentes de coraje en su interior que lo ayudan a seguir adelante",
+        "El protagonista enfrenta sus miedos en un enfrentamiento crucial con una figura temida",
+        "Con su valentía puesta a prueba, el protagonista encuentra el coraje para luchar por lo que más importa",
+        "A través de un acto de valentía, el protagonista vence lo que más temía, demostrando su fortaleza y resiliencia"
+      ],
+      "initialEvent": "El protagonista es llamado a enfrentar sus miedos más profundos, ya sea en una batalla física o psicológica",
+      "finalEventVictory": "A través de un acto de valentía, el protagonista vence lo que más temía, demostrando su fortaleza y resiliencia",
+      "finalEventDefeat": "El miedo supera al protagonista, y aunque lo intente, nunca logra vencer lo que temía, quedando marcado por su fracaso",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Poder",
+      "progress": [
+        "El protagonista encuentra un artefacto o una fuente de poder, pero pronto descubre que hay un alto costo",
+        "El protagonista comienza a usar el poder para cambiar las circunstancias, pero con cada uso, su humanidad se ve más amenazada",
+        "El protagonista debe decidir entre seguir buscando más poder o renunciar a lo que ha ganado",
+        "El protagonista utiliza el poder para realizar una hazaña épica, pero comienza a sentir las primeras señales de corrupción",
+        "El protagonista se enfrenta a la tentación de usar el poder para un propósito egoísta, pero lucha contra ello",
+        "El protagonista se da cuenta de que el poder está afectando a sus relaciones con los demás, y la soledad lo consume",
+        "El protagonista debe hacer un sacrificio personal para controlar el poder y evitar que destruya todo lo que le importa",
+        "El protagonista toma una decisión crítica sobre cómo usar el poder para el bien o para el mal",
+        "El poder es alcanzado, y el protagonista lo usa para crear un cambio positivo, alcanzando su objetivo"
+      ],
+      "initialEvent": "El protagonista busca un poder que le permitirá cambiar el mundo, pero no sabe a qué precio",
+      "finalEventVictory": "El poder es alcanzado, y el protagonista lo usa para crear un cambio positivo, alcanzando su objetivo",
+      "finalEventDefeat": "El poder corrompe al protagonista, quien termina perdiendo su humanidad al tratar de controlar algo demasiado grande para él",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Desesperación",
+      "progress": [
+        "El protagonista lucha por encontrar una forma de escapar de la situación, pero cada intento parece en vano",
+        "El protagonista busca ayuda, pero se enfrenta a la indiferencia de los demás o a la traición de aquellos en quienes confiaba",
+        "El protagonista se enfrenta a su propia debilidad y comienza a perder la fe en sí mismo",
+        "El protagonista empieza a cuestionar su propia existencia, sintiendo que no hay salida",
+        "El protagonista llega al límite de su resistencia y casi cede a la desesperación por completo",
+        "El protagonista decide tomar un último intento, arriesgando todo lo que le queda para escapar de la situación",
+        "El protagonista se enfrenta a la verdad más dolorosa: la situación es más grave de lo que pensaba",
+        "El protagonista encuentra una pequeña chispa de esperanza que lo impulsa a seguir luchando",
+        "A pesar de las circunstancias, el protagonista encuentra una chispa de esperanza o una salida, cambiando su destino"
+      ],
+      "initialEvent": "El protagonista se encuentra en una situación desesperada, sin esperanza de escape ni solución",
+      "finalEventVictory": "A pesar de las circunstancias, el protagonista encuentra una chispa de esperanza o una salida, cambiando su destino",
+      "finalEventDefeat": "La desesperación consume al protagonista, y la tragedia se vuelve irreversible, sumiendo al personaje en la oscuridad",
+      "type": "Senda de aventura"
+    },
+    {
+      "label": "Misterio",
+      "progress": [
+        "El protagonista sigue las pistas, adentrándose en secretos oscuros y misteriosos",
+        "Conforme se adentra más en el misterio, el protagonista se encuentra con fuerzas que no puede comprender o controlar",
+        "El protagonista debe decidir si resolver el misterio o dejarlo atrás antes de que le cueste demasiado",
+        "El protagonista descubre que el misterio está relacionado con algo más grande y oscuro de lo que imaginaba",
+        "El protagonista se enfrenta a la amenaza que ha estado acechando tras el misterio, poniendo en riesgo su vida",
+        "El protagonista se adentra en el corazón del misterio, descubriendo secretos perdidos y antiguos",
+        "El protagonista debe tomar una decisión sobre cómo proceder con la información que ha encontrado, arriesgando mucho",
+        "El protagonista enfrenta la revelación final, que cambiará su vida para siempre",
+        "El misterio se resuelve, revelando una verdad que cambia el mundo del protagonista para mejor"
+      ],
+      "initialEvent": "Un enigma antiguo o sobrenatural atrapa la atención del protagonista, quien comienza a investigar",
+      "finalEventVictory": "El misterio se resuelve, revelando una verdad que cambia el mundo del protagonista para mejor",
+      "finalEventDefeat": "El misterio queda sin resolver o lleva a una revelación devastadora, dejando al protagonista en la incertidumbre o el caos",
+      "type": "Senda de aventura"
+    }
+  ],
+  "sideQuests": [
+    {
+      "label": "Cazador de Bestias",
+      "description": "Un grupo de lobos salvajes está aterrorizando a una aldea cercana. Elimina a las bestias para asegurar la seguridad de los aldeanos",
+      "progress": [
+        "Rastrear el territorio donde los lobos fueron vistos por última vez",
+        "Eliminar a cinco lobos salvajes",
+        "Informar al líder de la aldea sobre la misión cumplida"
+      ],
+      "reward": "20 monedas de oro y una poción de curación"
+    },
+    {
+      "label": "Entrega Urgente",
+      "description": "Un mensajero fue atacado y perdió un paquete importante. Recupera el paquete y entrégalo al destinatario",
+      "progress": [
+        "Encontrar al mensajero en la carretera",
+        "Recuperar el paquete de los bandidos",
+        "Entregar el paquete al destinatario en la ciudad cercana"
+      ],
+      "reward": "15 monedas de oro y un mapa del tesoro"
+    },
+    {
+      "label": "Recolector de Hierbas",
+      "description": "Un herbolario necesita hierbas raras para preparar medicinas. Encuentra y recolecta las hierbas en el bosque",
+      "progress": [
+        "Ubicar el área donde crecen las hierbas raras",
+        "Recolectar 10 unidades de hierbas específicas",
+        "Regresar y entregar las hierbas al herbolario"
+      ],
+      "reward": "10 monedas de oro y una receta de poción"
+    },
+    {
+      "label": "Espantapájaros Roto",
+      "description": "Un granjero está perdiendo su cosecha porque un espantapájaros fue destruido por las tormentas. Ayúdalo a construir uno nuevo",
+      "progress": [
+        "Recolectar madera y paja para el espantapájaros",
+        "Construir el espantapájaros en el campo del granjero",
+        "Asegurarte de que el espantapájaros funciona"
+      ],
+      "reward": "5 monedas de oro y un saco de grano"
+    },
+    {
+      "label": "Cueva Misteriosa",
+      "description": "Un anciano habla de una cueva que solía contener tesoros. Explora la cueva y encuentra lo que queda",
+      "progress": [
+        "Llegar a la entrada de la cueva",
+        "Explorar las profundidades de la cueva",
+        "Recuperar un artefacto valioso y regresar a la aldea"
+      ],
+      "reward": "30 monedas de oro y un anillo encantado"
+    },
+    {
+      "label": "La Joya Perdida",
+      "description": "Una mercader perdió una joya valiosa durante un asalto. Encuentra al ladrón y recupera la joya",
+      "progress": [
+        "Rastrear al ladrón en los alrededores del mercado",
+        "Derrotar al ladrón y recuperar la joya",
+        "Devolver la joya al mercader"
+      ],
+      "reward": "25 monedas de oro y un colgante mágico"
+    },
+    {
+      "label": "Problemas de Plaga",
+      "description": "Un almacén está infestado de ratas. Ayuda al propietario a deshacerse de ellas",
+      "progress": [
+        "Entrar al almacén y eliminar las ratas",
+        "Encontrar el nido de ratas",
+        "Destruir el nido y sellar los puntos de entrada"
+      ],
+      "reward": "15 monedas de oro y un kit de herramientas"
+    },
+    {
+      "label": "Búsqueda de Artefactos",
+      "description": "Un arqueólogo está buscando antiguos artefactos en unas ruinas cercanas. Ayúdalo a recolectarlos",
+      "progress": [
+        "Viajar a las ruinas antiguas",
+        "Recolectar tres artefactos intactos",
+        "Entregar los artefactos al arqueólogo"
+      ],
+      "reward": "40 monedas de oro y una brújula mágica"
+    },
+    {
+      "label": "Cristales Mágicos",
+      "description": "Una hechicera necesita cristales mágicos para sus experimentos. Encuentra los cristales en una mina peligrosa",
+      "progress": [
+        "Localizar la mina mágica",
+        "Recolectar cinco cristales mágicos",
+        "Regresar y entregar los cristales a la hechicera"
+      ],
+      "reward": "50 monedas de oro y un bastón encantado"
+    },
+    {
+      "label": "Protege la Caravana",
+      "description": "Una caravana comerciante necesita escolta para atravesar un territorio peligroso",
+      "progress": [
+        "Reunirte con la caravana en el punto de partida",
+        "Proteger la caravana de los bandidos durante el trayecto",
+        "Llegar a salvo al destino final"
+      ],
+      "reward": "35 monedas de oro y una armadura ligera"
+    },
+    {
+      "label": "El Tesoro Hundido",
+      "description": "Un marinero habla de un barco hundido que contiene tesoros. Encuentra el tesoro antes de que otros lo hagan",
+      "progress": [
+        "Localizar el área donde se hundió el barco",
+        "Bucear o explorar el fondo del mar para encontrar el tesoro",
+        "Regresar con el botín al marinero"
+      ],
+      "reward": "50 monedas de oro y un colgante que mejora la resistencia al agua"
+    },
+    {
+      "label": "El Forajido",
+      "description": "Un bandido conocido está causando estragos en los caminos. Captúralo vivo o muerto",
+      "progress": [
+        "Rastrear al forajido en el bosque",
+        "Enfrentarlo en combate y neutralizarlo",
+        "Entregar al forajido o su cabeza a las autoridades locales"
+      ],
+      "reward": "45 monedas de oro y un arma especial"
+    },
+    {
+      "label": "El Mensaje Codificado",
+      "description": "Encuentra a un erudito que pueda descifrar un pergamino con un mensaje encriptado",
+      "progress": [
+        "Recuperar el pergamino de un grupo de saqueadores",
+        "Viajar a la torre del erudito",
+        "Desencriptar el mensaje y descubrir su significado"
+      ],
+      "reward": "20 monedas de oro y acceso a información secreta"
+    },
+    {
+      "label": "Criaturas Nocturnas",
+      "description": "Un pueblo cercano sufre ataques de murciélagos gigantes durante la noche. Ayuda a resolver el problema",
+      "progress": [
+        "Investigar la ubicación de los murciélagos durante el día",
+        "Eliminar a los murciélagos o destruir su nido",
+        "Asegurarte de que los aldeanos estén a salvo"
+      ],
+      "reward": "30 monedas de oro y un amuleto contra criaturas nocturnas"
+    }
+  ],
+  "personalAdventures": [
+    {
+      "label": "Sombras del Pasado",
+      "description": "Una figura del pasado ha regresado, trayendo consigo recuerdos dolorosos y una amenaza silenciosa",
+      "progress": [
+        "Descubrir la identidad de la figura misteriosa",
+        "Investigar su conexión con tu pasado",
+        "Enfrentar a la figura y cerrar el capítulo de tu historia"
+      ],
+      "reward": "50 monedas de oro y un objeto personal con un poder oculto"
+    },
+    {
+      "label": "El Juramento Roto",
+      "description": "Un juramento que hiciste años atrás ha sido quebrantado. Encuentra la manera de redimirte o aceptar las consecuencias",
+      "progress": [
+        "Localizar a las personas afectadas por el juramento roto",
+        "Realizar un acto de redención para enmendar tus errores",
+        "Aceptar o rechazar el perdón ofrecido"
+      ],
+      "reward": "35 monedas de oro y un amuleto que simboliza la redención"
+    },
+    {
+      "label": "Legado Familiar",
+      "description": "Descubre la verdad detrás del legado de tu familia, perdido en las sombras del tiempo",
+      "progress": [
+        "Encontrar un artefacto que perteneció a tu familia",
+        "Desentrañar los secretos que rodean el legado",
+        "Decidir si restaurar el honor de tu linaje o empezar uno nuevo"
+      ],
+      "reward": "60 monedas de oro y un emblema de tu linaje"
+    },
+    {
+      "label": "Cadenas Invisibles",
+      "description": "Un pacto realizado en el pasado ahora amenaza con consumir tu libertad. Encuentra una manera de romperlo",
+      "progress": [
+        "Identificar quién sostiene las cadenas del pacto",
+        "Buscar un objeto o ritual para romper el pacto",
+        "Liberarte de las ataduras y confrontar a quien te las impuso"
+      ],
+      "reward": "70 monedas de oro y una reliquia que aumenta la voluntad"
+    },
+    {
+      "label": "El Sueño Perdido",
+      "description": "Un sueño recurrente sobre un lugar desconocido podría ser la clave para descubrir un secreto oculto",
+      "progress": [
+        "Interpretar el significado del sueño",
+        "Encontrar la ubicación del lugar soñado",
+        "Explorar el lugar y descubrir sus misterios"
+      ],
+      "reward": "40 monedas de oro y un objeto mágico encontrado en el lugar"
+    },
+    {
+      "label": "El Huérfano Desaparecido",
+      "description": "Un niño que juraste proteger ha desaparecido sin dejar rastro. Encuéntralo antes de que sea demasiado tarde",
+      "progress": [
+        "Rastrear las últimas pistas sobre el paradero del niño",
+        "Enfrentar a quienes lo han capturado o descubrir qué ocurrió",
+        "Asegurar el regreso del niño a un lugar seguro"
+      ],
+      "reward": "45 monedas de oro y un talismán de protección"
+    },
+    {
+      "label": "El Eco de la Traición",
+      "description": "Una traición pasada aún resuena en tu vida. Descubre la verdad y decide cómo actuar",
+      "progress": [
+        "Identificar al traidor y sus motivos",
+        "Recuperar lo que perdiste por la traición",
+        "Enfrentar al traidor y tomar una decisión final"
+      ],
+      "reward": "50 monedas de oro y una daga de gran valor emocional"
+    },
+    {
+      "label": "La Espada Forjada en Fuego",
+      "description": "Un arma legendaria que una vez empuñaste fue destruida. Encuentra una manera de forjarla de nuevo",
+      "progress": [
+        "Recolectar los materiales necesarios para la forja",
+        "Convencer a un herrero legendario para ayudarte",
+        "Presenciar o participar en el ritual de forja"
+      ],
+      "reward": "La espada forjada con habilidades especiales"
+    },
+    {
+      "label": "La Melodía Olvidada",
+      "description": "Una canción de tu infancia guarda un significado oculto que podría cambiar tu destino",
+      "progress": [
+        "Recordar la melodía completa",
+        "Descifrar su significado oculto o místico",
+        "Utilizar el conocimiento para alterar tu camino o ayudar a otros"
+      ],
+      "reward": "30 monedas de oro y una flauta mágica que emite la melodía"
+    },
+    {
+      "label": "La Marca del Destino",
+      "description": "Una marca que apareció en tu piel señala un vínculo con una profecía. Descubre qué significa",
+      "progress": [
+        "Investigar el origen de la marca",
+        "Hablar con sabios o profetas que puedan interpretarla",
+        "Cumplir o rechazar el destino que la marca dicta"
+      ],
+      "reward": "75 monedas de oro y un objeto que amplifica tus habilidades"
+    }
+  ],
+  "items": [
+    { "label": "consumables", "name": "Poción de curación", "type": "Consumible", "description": "Restaura 20 puntos de vida." },
+    { "label": "consumables", "name": "Antídoto", "type": "Consumible", "description": "Cura veneno." },
+    { "label": "consumables", "name": "Elixir de maná", "type": "Consumible", "description": "Recupera 10 puntos de maná." },
+    { "label": "consumables", "name": "Pan duro", "type": "Consumible", "description": "Restaura 5 puntos de vida." },
+    { "label": "consumables", "name": "Hierbas revitalizantes", "type": "Consumible", "description": "Aumenta la resistencia temporalmente." },
+    { "label": "consumables", "name": "Tónico de fuerza", "type": "Consumible", "description": "Incrementa el ataque durante 3 turnos." },
+    { "label": "consumables", "name": "Fruta fresca", "type": "Consumible", "description": "Restaura 10 puntos de vida." },
+    { "label": "consumables", "name": "Agua pura", "type": "Consumible", "description": "Restaura 5 puntos de energía." },
+    { "label": "consumables", "name": "Aceite curativo", "type": "Consumible", "description": "Cura quemaduras." },
+    { "label": "consumables", "name": "Sales energizantes", "type": "Consumible", "description": "Recupera a un aliado caído." },
+    { "label": "armor", "name": "Cota de malla", "type": "Armadura", "subtype": "Cuerpo", "description": "Protección básica contra ataques físicos." },
+    { "label": "armor", "name": "Yelmo de acero", "type": "Armadura", "subtype": "Casco", "description": "Protege la cabeza de golpes fuertes." },
+    { "label": "armor", "name": "Escudo de madera", "type": "Armadura", "subtype": "Escudo", "description": "Bloquea ataques ligeros." },
+    { "label": "armor", "name": "Cinturón reforzado", "type": "Armadura", "subtype": "Cinturón", "description": "Incrementa la capacidad de carga." },
+    { "label": "armor", "name": "Armadura de placas", "type": "Armadura", "subtype": "Cuerpo", "description": "Ofrece alta protección." },
+    { "label": "armor", "name": "Casco con visera", "type": "Armadura", "subtype": "Casco", "description": "Reduce el daño crítico a la cabeza." },
+    { "label": "armor", "name": "Escudo de acero", "type": "Armadura", "subtype": "Escudo", "description": "Bloquea ataques pesados." },
+    { "label": "armor", "name": "Cinturón de herramientas", "type": "Armadura", "subtype": "Cinturón", "description": "Mejora habilidades relacionadas con la artesanía." },
+    { "label": "armor", "name": "Chaleco acolchado", "type": "Armadura", "subtype": "Cuerpo", "description": "Proporciona resistencia ligera." },
+    { "label": "armor", "name": "Casco de cuero", "type": "Armadura", "subtype": "Casco", "description": "Protección básica para la cabeza." },
+    { "label": "clothing", "name": "Túnica de mago", "type": "Vestimenta", "description": "Aumenta el maná máximo." },
+    { "label": "clothing", "name": "Capa del viajero", "type": "Vestimenta", "description": "Ofrece resistencia al clima." },
+    { "label": "clothing", "name": "Ropa ligera", "type": "Vestimenta", "description": "Permite mayor agilidad." },
+    { "label": "clothing", "name": "Vestimenta de noble", "type": "Vestimenta", "description": "Incrementa el carisma en 2 puntos." },
+    { "label": "clothing", "name": "Chaleco de cazador", "type": "Vestimenta", "description": "Mejora las habilidades de sigilo." },
+    { "label": "clothing", "name": "Abrigo grueso", "type": "Vestimenta", "description": "Protege del frío extremo." },
+    { "label": "clothing", "name": "Pantalones reforzados", "type": "Vestimenta", "description": "Ofrecen protección adicional." },
+    { "label": "clothing", "name": "Botas de cuero", "type": "Vestimenta", "description": "Incrementan la velocidad de movimiento." },
+    { "label": "clothing", "name": "Sombrero de plumas", "type": "Vestimenta", "description": "Incrementa el carisma." },
+    { "label": "clothing", "name": "Guantes de ladrón", "type": "Vestimenta", "description": "Mejoran habilidades de robo." },
+    { "label": "trinkets", "name": "Antorcha", "type": "Pertrecho", "description": "Proporciona luz en la oscuridad." },
+    { "label": "trinkets", "name": "Cuerda", "type": "Pertrecho", "description": "Útil para escalar o asegurar objetos." },
+    { "label": "trinkets", "name": "Frasco de aceite", "type": "Pertrecho", "description": "Utilizable para trampas o lámparas." },
+    { "label": "consumables", "name": "Raciones de viaje", "type": "Consumible", "description": "Proporciona sustento durante un día." },
+    { "label": "trinkets", "name": "Mapa del aventurero", "type": "Pertrecho", "description": "Revela ubicaciones cercanas." },
+    { "label": "trinkets", "name": "Kit de primeros auxilios", "type": "Pertrecho", "description": "Permite curar heridas leves." },
+    { "label": "trinkets", "name": "Linterna", "type": "Pertrecho", "description": "Proporciona luz constante." },
+    { "label": "trinkets", "name": "Bolsa de gemas", "type": "Pertrecho", "description": "Un pequeño tesoro portátil." },
+    { "label": "trinkets", "name": "Pico", "type": "Pertrecho", "description": "Útil para minería." },
+    { "label": "trinkets", "name": "Tienda de campaña", "type": "Pertrecho", "description": "Proporciona refugio temporal." },
+    {
+      "name": "Amuleto de la Resistencia",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Amuleto que otorga cualidades aumentadas a su propietario.",
+      "aspectName": "Vigor",
+      "skillName": "Resistencia",
+      "cost": 250
+    },
+    {
+      "name": "Bálsamo",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Bálsamo para aliviar el dolor y acelerar la recuperación.",
+      "aspectName": "Vigor",
+      "skillName": "Resistencia",
+      "cost": 20
+    },
+    {
+      "name": "Ropa de viaje",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Cuerpo",
+      "description": "Ropa duradera y ligera, adecuada para largas jornadas.",
+      "aspectName": "Vigor",
+      "skillName": "Resistencia",
+      "cost": 50
+    },
+    {
+      "name": "Cinturón de cuero",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Cinturón",
+      "description": "Cinturón de cuero resistente que proporciona apoyo extra.",
+      "aspectName": "Vigor",
+      "skillName": "Resistencia",
+      "cost": 40
+    },
+    {
+      "name": "Hierbas estimulantes",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Hierbas que aumentan la energía durante un tiempo limitado.",
+      "aspectName": "Vigor",
+      "skillName": "Resistencia",
+      "cost": 20
+    },
+    {
+      "name": "Zapatillas reforzadas",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Calzado",
+      "description": "Calzado resistente, ideal para evitar lesiones al saltar o correr.",
+      "aspectName": "Vigor",
+      "skillName": "Acrobacias",
+      "cost": 30
+    },
+    {
+      "name": "Equipo de escalada",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Conjunto de herramientas para facilitar la escalada en terrenos difíciles.",
+      "aspectName": "Vigor",
+      "skillName": "Acrobacias",
+      "cost": 50
+    },
+    {
+      "name": "Guantes reforzados",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Guantes",
+      "description": "Guantes resistentes que protegen las manos durante el trabajo o combate.",
+      "aspectName": "Vigor",
+      "skillName": "Acrobacias",
+      "cost": 25
+    },
+    {
+      "name": "Capa ligera",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Capa",
+      "description": "Capa ligera que permite libertad de movimiento sin comprometer la protección.",
+      "aspectName": "Vigor",
+      "skillName": "Acrobacias",
+      "cost": 60
+    },
+    {
+      "name": "Martillo",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Martillo pesado usado en combate para infligir daño contundente.",
+      "aspectName": "Vigor",
+      "skillName": "Contundentes",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Maza",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Arma contundente con una gran cabeza metálica, eficaz contra armaduras.",
+      "aspectName": "Vigor",
+      "skillName": "Contundentes",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Báculo",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Báculo reforzado con metal en la punta, utilizado tanto como bastón como arma.",
+      "aspectName": "Vigor",
+      "skillName": "Contundentes",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Espada bastarda",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Espada grande, ideal para ser manejada con ambas manos, proporcionando gran poder de corte.",
+      "aspectName": "Vigor",
+      "skillName": "A dos manos",
+      "cost": 125,
+      "bonus": 1
+    },
+    {
+      "name": "Hacha de guerra",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Hacha grande que requiere ambas manos para ser manejada, eficaz en combate cuerpo a cuerpo.",
+      "aspectName": "Vigor",
+      "skillName": "A dos manos",
+      "cost": 125,
+      "bonus": 1
+    },
+    {
+      "name": "Bastón de combate",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Bastón largo reforzado para ser usado tanto en combate como en defensa.",
+      "aspectName": "Vigor",
+      "skillName": "A dos manos",
+      "cost": 125,
+      "bonus": 1
+    },
+    {
+      "name": "Lanza",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Lanza de asta larga con una punta afilada, utilizada para mantener al enemigo a distancia.",
+      "aspectName": "Vigor",
+      "skillName": "Armas largas",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Pica",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Pica larga, diseñada para penetrar armaduras y causar daño a larga distancia.",
+      "aspectName": "Vigor",
+      "skillName": "Armas largas",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Alabarda",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Arma de asta con una combinación de lanza y hacha, eficaz tanto en corte como en empuje.",
+      "aspectName": "Vigor",
+      "skillName": "Armas largas",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Cuerda",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Cuerda de alta resistencia, ideal para escalar, sujetar o crear trampas.",
+      "aspectName": "Vigor",
+      "skillName": "Atletismo",
+      "cost": 25
+    },
+    {
+      "name": "Bastón de senderismo",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Bastón liviano que ayuda en el caminar por terrenos difíciles.",
+      "aspectName": "Vigor",
+      "skillName": "Atletismo",
+      "cost": 25
+    },
+    {
+      "name": "Túnica de camuflaje",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Capa",
+      "description": "Túnica especialmente diseñada para confundirse con el entorno natural.",
+      "aspectName": "Subterfugio",
+      "skillName": "Sigilo",
+      "cost": 75
+    },
+    {
+      "name": "Poción",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Poción que otorga invisibilidad temporal al usuario.",
+      "aspectName": "Subterfugio",
+      "skillName": "Sigilo",
+      "cost": 30
+    },
+    {
+      "name": "Sombrero de ala ancha",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "description": "Sombrero de ala ancha que ayuda a ocultar la cara y evita ser reconocido.",
+      "aspectName": "Subterfugio",
+      "skillName": "Sigilo",
+      "cost": 8
+    },
+    {
+      "name": "Anillo de distracción",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "subtype": "Cuerpo",
+      "description": "Anillo que emite una señal de distracción para desorientar al enemigo.",
+      "aspectName": "Subterfugio",
+      "skillName": "Juego de manos",
+      "cost": 75
+    },
+    {
+      "name": "Cinta de cuero",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Cinturón",
+      "description": "Cinta de cuero flexible usada para esconder herramientas pequeñas.",
+      "aspectName": "Subterfugio",
+      "skillName": "Juego de manos",
+      "cost": 25
+    },
+    {
+      "name": "Pañuelo",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "description": "Pañuelo que puede ser usado para ocultar objetos o distraer enemigos.",
+      "aspectName": "Subterfugio",
+      "skillName": "Juego de manos",
+      "cost": 50
+    },
+    {
+      "name": "Pañuelo de camuflaje",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "description": "Pañuelo especial que ayuda a mezclarse con el entorno, aumentando la capacidad de ocultarse.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ocultar",
+      "cost": 75
+    },
+    {
+      "name": "Bolsillo secreto (capa)",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Capa",
+      "description": "Capa con un bolsillo secreto que permite esconder objetos pequeños.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ocultar",
+      "cost": 75
+    },
+    {
+      "name": "Capa de camuflaje",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Capa",
+      "description": "Capa que cubre al usuario con un patrón que le permite pasar desapercibido en la naturaleza.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ocultar",
+      "cost": 75
+    },
+    {
+      "name": "Espada",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Espada estándar de combate, balanceada para cortar y repeler ataques.",
+      "aspectName": "Subterfugio",
+      "skillName": "Filo",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Hacha",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Hacha ligera, útil tanto para cortar como para defender.",
+      "aspectName": "Subterfugio",
+      "skillName": "Filo",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Daga",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Daga pequeña y rápida, fácil de esconder y perfecta para ataques sigilosos.",
+      "aspectName": "Subterfugio",
+      "skillName": "Filo",
+      "cost": 75,
+      "bonus": 1
+    },
+    {
+      "name": "Ballesta",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Arma de proyectiles que dispara virotes a larga distancia con gran precisión.",
+      "aspectName": "Subterfugio",
+      "skillName": "Certeza",
+      "cost": 125,
+      "bonus": 1
+    },
+    {
+      "name": "Arco",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Arco tradicional usado para disparar flechas con gran destreza y a largas distancias.",
+      "aspectName": "Subterfugio",
+      "skillName": "Certeza",
+      "cost": 125,
+      "bonus": 1
+    },
+    {
+      "name": "Cerbatana",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Arma pequeña y discreta que dispara dardos venenosos a distancia.",
+      "aspectName": "Subterfugio",
+      "skillName": "Certeza",
+      "cost": 100,
+      "bonus": 1
+    },
+    {
+      "name": "Honda",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Arma arrojadiza que lanza piedras a gran velocidad con una excelente precisión.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ligereza",
+      "cost": 75,
+      "bonus": 1
+    },
+    {
+      "name": "Cuchillos",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Cuchillos pequeños y afilados diseñados para ser lanzados a gran distancia.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ligereza",
+      "cost": 50,
+      "bonus": 1
+    },
+    {
+      "name": "Dardos",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A mano",
+      "description": "Dardos afilados que se lanzan con rapidez y tienen efectos venenosos al impactar.",
+      "aspectName": "Subterfugio",
+      "skillName": "Ligereza",
+      "cost": 50,
+      "bonus": 1
+    },
+    {
+      "name": "Gafas visión nocturna",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Gafas especiales que permiten ver en la oscuridad.",
+      "aspectName": "Sabiduría",
+      "skillName": "Percepción",
+      "cost": 75
+    },
+    {
+      "name": "Lentes de ampliación",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Lentes que mejoran la visión, permitiendo observar detalles a gran distancia.",
+      "aspectName": "Sabiduría",
+      "skillName": "Percepción",
+      "cost": 75
+    },
+    {
+      "name": "Espejo de mano",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Espejo compacto utilizado para reflejar luz o observar áreas inaccesibles.",
+      "aspectName": "Sabiduría",
+      "skillName": "Percepción",
+      "cost": 25
+    },
+    {
+      "name": "Incienso",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Incienso utilizado para ayudar a la concentración en momentos de meditación o estudio.",
+      "aspectName": "Sabiduría",
+      "skillName": "Concentración",
+      "cost": 50
+    },
+    {
+      "name": "Hierbas concentración",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Un puñado de hierbas que, al ser consumidas, mejoran el enfoque mental durante un corto período.",
+      "aspectName": "Sabiduría",
+      "skillName": "Concentración",
+      "cost": 75
+    },
+    {
+      "name": "Tetraedro de madera",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Objeto pequeño de madera que se utiliza como herramienta para mejorar la concentración.",
+      "aspectName": "Sabiduría",
+      "skillName": "Concentración",
+      "cost": 75
+    },
+    {
+      "name": "Multiusos",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Herramienta que incluye cuchillo, destornillador y otros utensilios útiles para la supervivencia.",
+      "aspectName": "Sabiduría",
+      "skillName": "Supervivencia",
+      "cost": 50
+    },
+    {
+      "name": "Yesca y pedernal",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Kit básico para hacer fuego en condiciones adversas.",
+      "aspectName": "Sabiduría",
+      "skillName": "Supervivencia",
+      "cost": 50
+    },
+    {
+      "name": "Lupa",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Lupa que permite ver detalles pequeños con mayor claridad.",
+      "aspectName": "Sabiduría",
+      "skillName": "Deducción",
+      "cost": 75
+    },
+    {
+      "name": "Cuaderno de notas",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Cuaderno de cuero donde se pueden escribir observaciones y deducciones.",
+      "aspectName": "Sabiduría",
+      "skillName": "Deducción",
+      "cost": 30
+    },
+    {
+      "name": "Libro de referencia",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Un volumen encuadernado que contiene información clave para resolver enigmas o desafíos.",
+      "aspectName": "Sabiduría",
+      "skillName": "Deducción",
+      "cost": 50
+    },
+    {
+      "name": "Vendas",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Vendas simples para cubrir heridas y detener el sangrado.",
+      "aspectName": "Sabiduría",
+      "skillName": "Medicina",
+      "cost": 50
+    },
+    {
+      "name": "Hierbas medicinales",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Mezcla de hierbas curativas que acelera la recuperación de heridas y enfermedades.",
+      "aspectName": "Sabiduría",
+      "skillName": "Medicina",
+      "cost": 75
+    },
+    {
+      "name": "Ungüento",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Pomada que se aplica sobre las heridas para aliviar el dolor y acelerar la curación.",
+      "aspectName": "Sabiduría",
+      "skillName": "Medicina",
+      "cost": 50
+    },
+    {
+      "name": "Cristales de energía",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Cristales mágicos que amplifican la energía arcana y pueden ser usados para potenciar hechizos.",
+      "aspectName": "Sabiduría",
+      "skillName": "Arcano",
+      "cost": 150
+    },
+    {
+      "name": "Báculo arcano",
+      "label": "weapons",
+      "type": "Arma",
+      "subtype": "A 2 manos",
+      "description": "Báculo cargado de poder arcano, utilizado por los hechiceros para canalizar su magia.",
+      "aspectName": "Sabiduría",
+      "skillName": "Arcano",
+      "cost": 150,
+      "bonus": 1
+    },
+    {
+      "name": "Grimorio",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Un libro de hechizos y encantamientos que sirve como referencia para los magos.",
+      "aspectName": "Sabiduría",
+      "skillName": "Arcano",
+      "cost": 200
+    },
+    {
+      "name": "Pergamino",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Un pergamino con un hechizo escrito que puede ser usado por el usuario para invocar magia en un momento específico.",
+      "aspectName": "Sabiduría",
+      "skillName": "Arcano",
+      "cost": 100
+    },
+    {
+      "name": "Colgante tortuoso",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Colgante oscuro que intimida y causa temor a aquellos que lo miran.",
+      "aspectName": "Astucia",
+      "skillName": "Intimidar",
+      "cost": 150
+    },
+    {
+      "name": "Tatuaje",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "description": "Tatuaje ritual que imbuye al portador con una presencia intimidante.",
+      "aspectName": "Astucia",
+      "skillName": "Intimidar",
+      "cost": 150
+    },
+    {
+      "name": "Máscara de guerra",
+      "label": "clothing",
+      "type": "Vestimenta",
+      "subtype": "Casco",
+      "description": "Máscara que cubre todo el rostro, utilizada para aumentar el miedo que se infunde en los enemigos.",
+      "aspectName": "Astucia",
+      "skillName": "Intimidar",
+      "cost": 100
+    },
+    {
+      "name": "Campañilla",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Campanilla pequeña usada para alertar sobre peligros cercanos.",
+      "aspectName": "Astucia",
+      "skillName": "Alerta",
+      "cost": 25
+    },
+    {
+      "name": "Elixir",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Elixir que aumenta temporalmente la resistencia física y mental del usuario.",
+      "aspectName": "Astucia",
+      "skillName": "Entereza",
+      "cost": 125
+    },
+    {
+      "name": "Hierbas relajantes",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Hierbas que calman el cuerpo y la mente, ayudando a reducir el estrés y la ansiedad.",
+      "aspectName": "Astucia",
+      "skillName": "Entereza",
+      "cost": 75
+    },
+    {
+      "name": "Hierbas inspiradoras",
+      "label": "consumables",
+      "type": "Consumible",
+      "description": "Hierbas que mejoran el carisma y la capacidad para influir en los demás.",
+      "aspectName": "Astucia",
+      "skillName": "Persuadir",
+      "cost": 75
+    },
+    {
+      "name": "Emblema noble",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Emblema que representa el linaje noble, utilizado para inspirar respeto y autoridad.",
+      "aspectName": "Astucia",
+      "skillName": "Liderazgo",
+      "cost": 250
+    },
+    {
+      "name": "Anillo noble",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Anillo que simboliza el estatus de nobleza, otorgando prestigio y respeto.",
+      "aspectName": "Astucia",
+      "skillName": "Liderazgo",
+      "cost": 250
+    },
+    {
+      "name": "Collar noble",
+      "label": "trinkets",
+      "type": "Pertrecho",
+      "description": "Collar adornado con piedras preciosas que denota el rango y autoridad de la familia noble.",
+      "aspectName": "Astucia",
+      "skillName": "Liderazgo",
+      "cost": 250
+    }
+  ]
+}

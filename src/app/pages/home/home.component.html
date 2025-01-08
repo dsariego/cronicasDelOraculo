@@ -1,0 +1,48 @@
+<div class="grid-container">
+
+  <app-options-template class="grid-options" [menuItems]="_constants.menuItemsHome" [itemName]="_constants.home" [separatorColor]="_constants.colorDarkRed" [optionalImageUrl]="'assets/images/ico-logo-no-fill.png'"></app-options-template>
+  <app-hermit-template class="grid-hermit" [itemName]="_constants.home" [separatorColor]="_constants.colorGold" [tooltipMessage]="_constants.tooltipsHermitDialogue0"></app-hermit-template>
+  <app-record-template *ngIf="!_userService.userObject()?.role" class="grid-record" [menuItems]="_constants.menuItemsHome" [itemName]="_constants.home" [separatorColor]="_constants.colorDarkRed"></app-record-template>
+
+  <!-- <div class="grid-item grid-options papyrus-background rounded-shadow" style="--grid-columns: 8; --border-color: #8B0000;">
+    <div class="blk-logo">
+      <img src="assets/images/ico-logo-no-fill.png" class="logo" alt="Crónicas del Oráculo">
+      <div class="separator separator-color" style="--separator-color: #8B0000; --separator-width: 100%; --line-top: 1rem; --line-bottom: 1rem;"></div>
+      <ul class="styled-list">
+        <ng-container *ngFor="let item of _constants.menuItemsHome">
+          <a class="nav-link" [routerLink]="item.link">
+            <li class="list-item"
+                (mouseenter)="onMouseEnter(item, $event)"
+                (mouseleave)="onMouseLeave()"
+                (click)="onItemClick()">
+              {{ item.label }}
+            </li>
+          </a>
+        </ng-container>
+      </ul>
+
+      <div *ngIf="hoveredItem" class="info-popup tooltip-container" [style.top.px]="popupTop" [style.left.px]="popupLeft">
+        <p>{{ hoveredItem.description }}</p>
+      </div>
+
+    </div>
+  </div>-->
+
+  <!-- <div *ngIf="!_userService.userObject()?.role" class="grid-item grid-record papyrus-background rounded-shadow" style="--grid-columns: 8; --border-color: #8B0000;">
+    <h3 style="text-align:center; padding: 2rem 0 0;">Embárcate en una aventura épica.</h3>
+    <div class="separator separator-color" style="--separator-color: #8B0000; --separator-width: 100%"></div>
+    <div class="blk-logo">
+      <ul class="styled-list">
+        <a class="nav-link" aria-current="page" routerLink="adventure">
+          <li class="list-item"
+            (mouseenter)="onMouseEnter('adventure', $event)"
+            (mouseleave)="onMouseLeave()"
+            (click)="onItemClick()">
+          Haz tu Juramento</li>
+        </a>
+      </ul>
+    </div>
+    <p class="screen-type">Acompáñanos en este viaje a través de las <strong>Crónicas del Oráculo</strong>, donde la esperanza y la desesperación coexisten en un delicado equilibrio. Aquí, cada elección importa, y el peso del futuro recae sobre los hombros de aquellos que se atreven a soñar. Prepárate para explorar un mundo donde cada crónica te llevará más cerca de desentrañar los misterios del oráculo, y quizás, encontrar tu propio camino en este vasto tapiz de destinos entrelazados.</p>
+  </div> -->
+
+</div>

@@ -1,0 +1,103 @@
+<div class="navbar-wrapper">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" aria-current="page" routerLink="/" (click)="onItemClickItem()"><span class="logo-icon">Crónicas del <img src="assets/images/logo-oraculo-96-title.svg" class="" alt="O">räculo</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li
+            class="nav-item"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link" aria-current="page" routerLink="chronicles" [queryParams]="{ label: 'Las Crónicas' }" routerLinkActive="active">Crónicas</a>
+          </li>
+          <li
+            *ngIf="_userService.isRegistered()"
+            class="nav-item dropdown"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="forging" [queryParams]="{ label: 'Forja' }">
+              Forja
+            </a>
+          </li>
+          <li
+            class="nav-item dropdown"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLink="catacombs" [queryParams]="{ label: 'Catacumbas' }">
+              Catacumbas
+            </a>
+          </li>
+          <li
+            class="nav-item"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link" aria-current="page" routerLink="codex" [queryParams]="{ label: 'Códice' }">
+              Códice
+            </a>
+          </li>
+          <li
+            class="nav-item"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link" aria-current="page" routerLink="oracle" [queryParams]="{ label: 'Oráculo' }">
+              Oráculo
+            </a>
+          </li>
+          <li
+            class="nav-item"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onItemClick()">
+            <a class="nav-link position-relative" aria-current="page" routerLink="adventure" [queryParams]="{ label: 'Aventurero' }">
+              Aventurero<span *ngIf="badgeCount > 0" class="badge">{{ badgeCount }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isHomePage()" class="overlay-container">
+  <div class="welcome-container">
+    <p>Sea bienvenido <strong>{{ _userService.userObject()?.name }}</strong> a nuestra aplicación, donde te espera la aventura. Sumérgete en un mundo de fantasía, donde puedes crear y vivir experiencias únicas. </p>
+    <p>Si tienes alguna duda o necesitas orientación, no dudes en preguntar a la extraña figura a la que llaman el Ermitaño. Su sabiduría y conocimiento te guiarán en tu camino.</p>
+  </div>
+</div>
+
+<div *ngIf="!isHomePage()" class="container container-breadcrumb">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li *ngFor="let breadcrumb of breadcrumbLinks; let last = last" class="breadcrumb-item">
+        <a *ngIf="!last" [routerLink]="breadcrumb.url"  [queryParams]="{ label: breadcrumb.label }" (mouseenter)="onMouseEnter($event)" (click)="onItemClick()">{{ breadcrumb.label }}</a>
+        <span *ngIf="last">{{ breadcrumb.label }}</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<div class="container">
+  <router-outlet />
+</div>
+
+<div>
+  <footer>
+    <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+    <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="chronicles">Política de Privacidad</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="chronicles">Términos y Condiciones</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="chronicles">Crónicas</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="forging">Forja</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="catacombs">Catacumbas</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="grimoire">Grimorio</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="oracle">Oráculo</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="adventure">Aventurero</a></li>
+        <li class="nav-item"><a class="nav-link" aria-current="page" routerLink="oracle">Contacto</a></li>
+    </ul>
+    <div class="separator mt-5"></div>
+</footer>
+</div>
+

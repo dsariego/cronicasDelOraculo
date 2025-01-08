@@ -1,0 +1,519 @@
+<div class="grid-container-game">
+  <div class="grid-optionsG">
+
+    <!-- BOTONERA -->
+    <div *ngIf="!isGameplay" class="grid-item rounded-shadow" style="--border-color: #DAA520; padding: 1rem;">
+      <p class="title-character mt-2">{{ labelTitle }}</p>
+      <button
+        class="btn btn-primary mb-2 btn-lg w-100"
+        (mouseenter)="onMouseEnter($event)"
+        (click)="goTo(this._constants.SELECT_CHR)"
+      >{{ this._constants.SELECT_CHR }}</button>
+      <button
+        [disabled]="(!hasSelectedChronicle())"
+        class="btn btn-primary mb-2 btn-lg w-100"
+        (mouseenter)="onMouseEnter($event)"
+        (click)="goTo(this._constants.SELECT_ADV)"
+      >{{ this._constants.SELECT_ADV }}</button>
+      <button
+        [disabled]="(!hasSelectedAdventurer())"
+        class="btn btn-primary mb-2 btn-lg w-100"
+        (mouseenter)="onMouseEnter($event)"
+        (click)="goTo(this._constants.SELECT_LVL)"
+      >{{ this._constants.SELECT_LVL }}</button>
+      <button
+        [disabled]="(!hasSelectedDifficulty())"
+        class="btn btn-primary mb-2 btn-lg w-100"
+        (mouseenter)="onMouseEnter($event)"
+        (click)="goTo(this._constants.SELECT_INI)"
+      >{{ this._constants.SELECT_INI }}</button>
+    </div>
+
+    <!-- OPCIONES AYUDA -->
+    <div class="grid-item rounded-shadow" style="--border-color: #DAA520;">
+      <div class="img-and-switches-container">
+        <img src="assets/images/hermit-old-front.png" class="hermit-img" alt="El Ermitaño">
+        <div class="switches-container">
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedHelp" name="help" (ngModel)="userNeedHelp" (change)="onSwitchChange('help')" (click)="onItemClickItem()">
+            <label class="form-check-label" for="flexSwitchCheckCheckedHelp">{{ userNeedHelp ? 'Ignorar al Ermitaño' : 'Escuchar al Ermitaño' }}</label>
+          </div>
+          <div class="form-check form-switch custom-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckCheckedSound" name="sounds" (ngModel)="userNeedSounds" (change)="onSwitchChange('sounds')" (click)="onItemClickItem()">
+            <label class="form-check-label" for="flexSwitchCheckCheckedSound">{{ userNeedSounds ? 'Desactivar sonidos' : 'Activar sonidos' }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FICHA PERSONAJE -->
+    <div
+      class="grid-item rounded-shadow"
+      style="--border-color: #DAA520;"
+      *ngIf="selectedAdventurer && isGameplay"
+      (mouseenter)="onMouseEnter($event)"
+      (click)="onItemClickItem()">
+      <div [style.--color]="this._services.hexToRgb(getPrimaryColor(selectedAdventurer.occupation.primary))">
+        <div class="content">
+          <div class="title-character">
+            <p>{{ selectedAdventurer.name }}<br><small class="text-muted">{{ selectedAdventurer.occupation.name }}</small></p>
+          </div>
+          <hr class="divider">
+          <div class="middle-info">
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('drop') + ')'">
+              <p>{{ selectedAdventurer.endurance }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('sunshine') + ')'">
+              <p>{{ selectedAdventurer.destiny }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('parchment') + ')'">
+              <p>{{ selectedAdventurer.experience }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('sunburst') + ')'">
+              <p>{{ selectedAdventurer.virtue }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('heart') + ')'">
+              <p>{{ deckLife }}</p>
+            </div>
+          </div>
+          <div class="middle-info">
+            <p class="icon-footer">Aguante</p>
+            <p class="icon-footer">Destino</p>
+            <p class="icon-footer">Experiencia</p>
+            <p class="icon-footer">Virtud</p>
+            <p class="icon-footer">Vida</p>
+          </div>
+          <div class="middle-info">
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('shield') + ')'">
+              <p>{{ selectedAdventurer.armor }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('fight') + ')'">
+              <p>{{ selectedAdventurer.damage }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('money-bag') + ')'">
+              <p>{{ selectedAdventurer.coins }}</p>
+            </div>
+            <div class="icon-container" [style.background-image]="'url(' + getSkillIcon('thunder') + ')'">
+              <p>{{ selectedAdventurer.epic }}</p>
+            </div>
+            <div
+              class="icon-container icon-status"
+              [class]="getStatusClass()"
+              [style.background-image]="'url(' + getSkillIcon(selectedAdventurer.gender === 'female' ? 'knight' : 'swordsman') + ')'"
+              title="Estado del aventurero: {{ selectedAdventurer.status }}"
+              aria-label="Estado del aventurero">
+            </div>
+          </div>
+          <div class="middle-info">
+            <p class="icon-footer">Defensa</p>
+            <p class="icon-footer">Ataque</p>
+            <p class="icon-footer">Monedas</p>
+            <p class="icon-footer">Épica</p>
+            <p class="icon-footer">Estado</p>
+          </div>
+          <hr class="divider">
+
+          <div class="bottom characters">
+            <div *ngFor="let aspect of selectedAdventurer.aspects"
+                [ngStyle]="{ '--color': aspect.color }"
+                class="aspect-container">
+              <div class="info-overlay">
+                <p><strong>{{ aspect.name }}</strong></p>
+                <ul class="list-group card-text">
+                  <li *ngFor="let skill of aspect.skills" class="list-group-item list-skills">
+                    <span>{{ skill.name }}</span>
+                    <span><strong>{{ skill.value }}</strong></span>
+                  </li>
+                </ul>
+              </div>
+              <p>{{ aspect.sum }}</p>
+              <p>{{ aspect.value }}</p>
+            </div>
+          </div>
+          <hr class="divider">
+
+          <!-- LISTADO PNJ -->
+          <div class="title-character">
+            <p>Aliados</p>
+          </div>
+
+          <div *ngFor="let partner of selectedAdventurer.partners" class="character-section">
+            <div class="partner-header">
+              <h6>{{ partner.name }}</h6>
+              <span>[{{ partner.occupation.name }}] · {{ translateAspect(partner.occupation.primary) | capitalizeFirstLetter }} · Lvl.{{ partner.lvl }}</span>
+            </div>
+            <hr>
+
+            <div class="partner-info">
+              <p class="info-item">
+                <span class="label"><strong>Ataque</strong></span>
+                <span class="value">{{ partner.damage }}</span>
+              </p>
+              <p class="info-item">
+                <span class="label"><strong>Defensa</strong></span>
+                <span class="value">{{ partner.armor }}</span>
+              </p>
+              <p class="info-item">
+                <span class="label"><strong>Vida</strong></span>
+                <span class="value">{{ partner.life }}</span>
+              </p>
+              <p class="info-item">
+                <span class="label"><strong>Comodín</strong></span>
+                <span class="value">{{ partner.wildCard }}</span>
+              </p>
+            </div>
+
+            <div class="partner-skills">
+              <span *ngFor="let skill of partner.skills; let last = last" title="{{skill.description}}">
+                {{ skill.name }}
+                <ng-container *ngIf="!last"> · </ng-container>
+              </span>
+            </div>
+          </div>
+          <hr class="divider">
+
+
+          <!-- LISTADO EQUIPO -->
+          <div class="title-character">
+            <p>Equipo</p>
+          </div>
+          <div class="character-section" *ngFor="let equipment of equipmentTypes">
+            <p class="equipment-title">
+              {{ equipment.title }}
+              <span
+                class="expand-toggle"
+                (click)="toggleCollapse(equipment)"
+                [attr.data-bs-toggle]="'collapse'"
+                [attr.data-bs-target]="'#' + equipment.targetId"
+                [attr.aria-expanded]="equipment.isExpanded.toString()"
+                [attr.aria-controls]="equipment.targetId">
+                {{ equipment.isExpanded ? '[Cerrar]' : '[Expandir ' + (equipment.items?.length || 0) + ']' }}
+              </span>
+            </p>
+            <div [id]="equipment.targetId" class="collapse" [ngClass]="{'show': equipment.isExpanded}">
+              <ul class="equipment-list" *ngIf="equipment.items && equipment.items.length > 0; else noItems">
+                <li *ngFor="let item of equipment.items">
+                  <span><strong>{{ item.name }}</strong></span><br>
+                  <span>{{ item.description }}</span><br>
+                  <button *ngIf="item.type === 'Pertrecho' || item.type === 'Arma' || item.type === 'Armadura' || item.type === 'Vestimenta'" (click)="replaceEquipment(item.label)" class="btn-change-item">
+                    {{ equipment.actionText }}
+                  </button>
+                </li>
+              </ul>
+              <ng-template #noItems>
+                <p class="no-items-text">No hay {{ equipment.noItemsText }}.</p>
+              </ng-template>
+            </div>
+          </div>
+          <hr class="divider">
+
+          <!-- LISTADO Habilidades Especiales -->
+          <div class="title-character">
+            <p>Habilidades</p>
+          </div>
+          <div class="character-section" *ngFor="let special of specialTypes">
+            <p class="equipment-title">
+              {{ special.title }}
+              <span
+                class="expand-toggle"
+                (click)="toggleCollapse(special)"
+                [attr.data-bs-toggle]="'collapse'"
+                [attr.data-bs-target]="'#' + special.targetId"
+                [attr.aria-expanded]="special.isExpanded.toString()"
+                [attr.aria-controls]="special.targetId">
+                {{ special.isExpanded ? '[Cerrar]' : '[Expandir ' + (special.items?.length || 0) + ']' }}
+              </span>
+            </p>
+            <div [id]="special.targetId" class="collapse" [ngClass]="{'show': special.isExpanded}">
+              <ul class="equipment-list" *ngIf="special.items && special.items.length > 0; else noItems">
+                <li *ngFor="let item of special.items">
+                  <span><strong>{{ item.name }}</strong></span><br>
+                  <span>{{ item.description }}</span><br>
+                  <button *ngIf="item.type === 'Pertrecho' || item.type === 'Arma' || item.type === 'Armadura' || item.type === 'Vestimenta'" (click)="replaceEquipment(item.label)" class="btn-change-item">
+                    {{ special.actionText }}
+                  </button>
+                </li>
+              </ul>
+              <ng-template #noItems>
+                <p class="no-items-text">No hay {{ special.noItemsText }}.</p>
+              </ng-template>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="grid-gameG">
+
+    <div class="grid-item rounded-shadow">
+
+      <!-- SELECCIÓN CRÓNICA -->
+      <ng-container *ngIf="isChronicle">
+
+        <div *ngIf="chronicles$ | async as chronicles; else loading" class="location-selection">
+          <div
+            *ngFor="let chronicle of chronicles"
+            class="card-wrapper"
+            [ngClass]="{
+              'selected': selectedChronicle === chronicle,
+              'dimmed': hasSelectedChronicle() && selectedChronicle !== chronicle
+            }"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onClick(chronicle, 'chr')"
+            >
+            <div class="card-item rounded-shadow" [style.--color]="this._services.hexToRgb(chronicle?.acts?.[0]?.environmentType?.color || '#CCCCCC')">
+              <div class="content">
+                <div class="top">
+                  <p>{{ chronicle.title }}<br><small class="text-muted">{{ chronicle?.acts?.[0]?.environmentType?.label }}</small></p>
+                  <div class="color" [ngStyle]="{ 'background-color': chronicle?.acts?.[0]?.environmentType?.color }"></div>
+                </div>
+                <div
+                  class="middle-loc"
+                  [style.--color]="this._services.hexToRgb(chronicle?.acts?.[0]?.environmentType?.color || '#CCCCCC')"
+                  [style.--colorC]="this._services.getBestTextColor(chronicle?.acts?.[0]?.environmentType?.color || '#CCCCCC')"
+                  [style.background-image]="'url(' + urlScene + chronicle?.acts?.[0]?.environmentType?.name?.toLowerCase() +'.webp)'">
+
+                  <div>
+                    <p>{{ chronicle.description }}</p><br>
+                    <div class="adventure-lists" [style.--color]="this._services.hexToRgb(chronicle?.acts?.[0]?.environmentType?.color || '#CCCCCC')">
+                      <div class="list-container">
+                        <strong>Ruta de aventura</strong>
+                        <ul>
+                          <li *ngFor="let act of chronicle.acts">
+                            {{ act?.environmentType?.label }}
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="list-container list-container-right">
+                        <strong>Enemigos más comunes</strong>
+                        <ul>
+                          <li *ngFor="let act of chronicle.acts">
+                            {{ act?.enemies?.[0]?.label }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ng-container>
+
+      <!-- SELECCIÓN AVENTURERO -->
+      <ng-container *ngIf="isAdventurer">
+        <div *ngIf="adventurers$ | async as adventurers; else loading" class="adventurer-selection">
+          <div
+            *ngFor="let adventurer of adventurers"
+            class="card-wrapper"
+            [ngClass]="{
+              'selected': selectedAdventurer === adventurer,
+              'dimmed': hasSelectedAdventurer() && selectedAdventurer !== adventurer
+            }"
+            (mouseenter)="onMouseEnter($event)"
+            (click)="onClick(adventurer, 'adv')"
+            >
+
+            <div class="card-item rounded-shadow" [style.--color]="this._services.hexToRgb(getPrimaryColor(adventurer.occupation.primary))">
+              <div class="content">
+                <div class="top">
+                  <p>{{ adventurer.name }}<br><small class="text-muted">{{ adventurer.occupation.name }}</small></p>
+                  <div class="color" [ngStyle]="{ 'background-color': getPrimaryColor(adventurer.occupation.primary) }"></div>
+                </div>
+                <div class="middle">
+                  <div>
+                    <p>
+                      <strong>AGU:</strong> {{ adventurer.endurance }}<br>
+                      <strong>DES:</strong> {{ adventurer.destiny }}<br>
+                      <strong>EXP:</strong> {{ adventurer.experience }}
+                    </p>
+                  </div>
+                  <img [src]="getGenderIcon(adventurer.gender)" alt="{{adventurer.gender}}">
+                </div>
+                <hr class="divider">
+                <div class="bottom characters">
+                  <div *ngFor="let aspect of adventurer.aspects"
+                      [ngStyle]="{ '--color': aspect.color }"
+                      class="aspect-container">
+
+                    <div class="info-overlay">
+                      <p><strong>{{ aspect.name }}</strong></p>
+                      <ul class="list-group card-text">
+                        <li *ngFor="let skill of aspect.skills" class="list-group-item list-skills">
+                          <span>{{ skill.name }}</span>
+                          <span><strong>{{ skill.value }}</strong></span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <p>{{ aspect.sum }}</p>
+                    <p>{{ aspect.value }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <!-- SELECCIÓN DIFICULTAD -->
+      <ng-container *ngIf="isDifficulty">
+        <div class="blk-logo">
+          <ul *ngFor="let item of this._constants.DIFFICULTY_LVL" class="styled-list">
+            <li
+              class="card-wrapper"
+              [ngClass]="{
+                'selected': selectedGameSettings?.difficulty === item.name,
+                'dimmed': hasSelectedDifficulty() && selectedGameSettings?.difficulty !== item.name
+              }"
+              (mouseenter)="onMouseEnter($event)"
+              (click)="onClick(item, 'dif')">
+              <div class="card-item">{{ item.label }}</div>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
+      <!-- PANTALLA JUEGO -->
+      <ng-container *ngIf="isGameplay" class="papyrus-background">
+        <div *ngIf="response(); else loading" class="loading-spinner"></div>
+
+        <div class="grid-cover grid-item">
+          <img [src]="'/assets/images/cover_location_' + selectedChronicle?.acts?.[selectedGameSettings?.actPoints ?? 0]?.environmentType?.name?.toLowerCase() + '.webp'" class="optionalImageUrl">
+        </div>
+
+        <div class="chat-container">
+
+          <!-- MUESTRA INTEGRACIÓN IA CONTEXTUAL -->
+          <div class="chat-history">
+
+            <div id="text-container">
+              <div *ngFor="let paragraph of visibleParagraphs" class="p-4 paragraph">
+                <p>{{ paragraph }}</p>
+              </div>
+              <p style="text-align: right; margin-right: 1rem;">{{ currentParagraphIndex }} / {{ paragraphs.length }}</p>
+              <button *ngIf="currentParagraphIndex < paragraphs.length" (click)="showNextParagraph()" class="btn-playing">
+                Mostrar siguiente
+              </button>
+            </div>
+
+            <!-- PRUEBA TEST HABILIDAD -->
+            <div *ngIf="optionsTest.length > 0 && currentParagraphIndex >= paragraphs.length && !showCards"  class="p-4">
+              <h6 class="options-title">¿Qué deseas hacer?</h6>
+              <ul class="options-list styled-list">
+                <li *ngFor="let option of optionsTest; let i = index" class="option-item">
+                  <button class="btn btn-primary" (click)="onOptionClick(option)">
+                    <img *ngIf="option.willcardItem" src="assets/icons/visible.png" alt="Comodín aliado" class="highlight-img"/>
+                    {{ option.text }}
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <!-- ENFRENTAMIENTO ENEMIGO
+            <div *ngIf="optionsCombat.length > 0 && currentParagraphIndex >= paragraphs.length && !showCards"  class="p-4">
+              <h6 class="options-title">¿Qué deseas hacer?</h6>
+              <ul class="options-list styled-list">
+                <li *ngFor="let option of optionsCombat; let i = index" class="option-item">
+                  <button class="btn btn-primary" (click)="onOptionClick(option)">
+                    {{ option.text }}
+                  </button>
+                </li>
+              </ul>
+            </div>-->
+          </div>
+
+          <!-- CARTAS -->
+          <div *ngIf="showCards || (optionsCombat.length > 0 && currentParagraphIndex >= paragraphs.length)" class="p-4">
+            <h6 class="options-title"> {{ selectedOption?.text }}
+              <span *ngIf="selectedOption?.type == 'Desafío'">(Prueba de {{ selectedOption?.skill }} - {{ selectedOption?.aspect }})</span>
+            </h6>
+
+            <!-- FICHA ENEMIGO -->
+            <div *ngIf="selectedOption?.type == 'Enfrentamiento' || (optionsCombat.length > 0 && currentParagraphIndex >= paragraphs.length)">
+              <div class="item-element-card">
+                <div class="item-element-header">
+                  <h2>{{ enemyCombat?.label }}</h2>
+                  <p><i>{{ enemyCombat?.description }}</i></p>
+                </div>
+                <hr>
+                <div class="item-element-stats">
+                  <p><strong>Armadura:</strong> {{ enemyCombat?.armor }}</p>
+                  <p><strong>Daño:</strong> {{ enemyCombat?.damage }}</p>
+                  <p><strong>Vida:</strong> {{ enemyCombat?.life }}</p>
+                  <p><strong>Combate:</strong> {{ enemyCombat?.combat }}</p>
+                  <p><strong>Tipo de enemigo:</strong> {{ enemyCombat?.enemyType }}</p>
+                </div>
+                <hr>
+                <div class="item-element-attributes">
+                  <div *ngFor="let aspect of enemyCombat?.aspects" class="attribute">
+                    <span>{{ aspect.label }}</span>
+                    <span>{{ aspect.value }}</span>
+                  </div>
+                </div>
+                <hr>
+                <div class="item-element-extra">
+                  <p><strong>Desafío:</strong> Nivel {{ enemyCombat?.powerLevel }} ({{enemyCombat?.experience }} XP)</p>
+                </div>
+              </div>
+            </div>
+
+            <button *ngIf="!result && selectedOption?.type == 'Desafío'" (click)="performTest(selectedOption?.aspect || '', 0, selectedOption?.willcardItem || '')">Realizar prueba de {{ selectedOption?.skill }} ({{ selectedOption?.aspect }})</button>
+          </div>
+
+          <div *ngIf="drawnCards.length > 0" class="cards-container">
+            <div *ngFor="let card of drawnCards; let i = index" [ngStyle]="{'background-color': getCardColor(card.aspect)}" [class.flipped]="card.isFlipped" [style.animationDelay]="(i * 200) + 'ms'" class="card">
+              <div class="card-logo">
+                <img [src]="'/assets/icons/' + card.aspect.toLocaleLowerCase() + '.png'" alt="{{ card.aspect }}" class="card-icon"/>
+              </div>
+              <div class="card-content">
+                <p class="card-aspect">{{ card.aspect | uppercase }}</p>
+                <p class="card-value">{{ card.value }}</p>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="result" class="p-4">
+            <p *ngIf="statusTest"> {{ statusTest }}</p>
+            <p>Resultado de la prueba: {{ result }}</p>
+            <p *ngIf="extraPerform">{{ extraPerform }}</p>
+            <p *ngIf="resultCombatTurn" [innerHTML]="resultCombatTurn"></p>
+          </div>
+
+          <div *ngIf="optionsCombat.length > 0 && currentParagraphIndex >= paragraphs.length && !combatFinish" class="options-confrontation p-4">
+            <div *ngFor="let option of optionsCombat; let i = index">
+              <button (click)="handleAttackClick(option)" class="pr-2">{{ option?.text }} ({{ option?.value }})</button>
+            </div>
+          </div>
+          <!-- <button (click)="removeNextCard()">Eliminar la siguiente carta ({{ deckLife }})</button> -->
+        </div>
+
+        <div class="options-confrontation p-4">
+          <button
+            *ngIf="(optionsTest.length > 0 && result) || (optionsCombat.length > 0 && combatFinish)"
+            (click)="goTo(this._constants.SELECT_PLO)"
+            (mouseenter)="onMouseEnter($event)"
+            class="btn-playing">
+            {{ this._constants.SELECT_PLO }}
+          </button>
+        </div>
+      </ng-container>
+
+      <!-- PANTALLA CARGA -->
+      <ng-template #loading>
+        <div class="loading-overlay">
+          <div class="spinner-border text-light" role="status">
+            <span class="sr-only">Cargando...</span>
+          </div>
+        </div>
+      </ng-template>
+
+    </div>
+
+  </div>
+</div>

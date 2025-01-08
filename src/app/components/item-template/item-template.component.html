@@ -1,0 +1,63 @@
+<div class="grid-item papyrus-background rounded-shadow" style="--grid-columns: 8.25; --border-color: {{ separatorColor }};">
+  <div [ngClass]="optionalImageUrl ? 'blk-logo' : 'grid-cover'" class="grid-item">
+    <img [src]="optionalImageUrl ? optionalImageUrl : imageUrl" [alt]="altText" [ngClass]="optionalImageUrl ? 'logo': ''">
+    <span *ngIf="!optionalImageUrl" class="cover-text">
+      {{ itemLabel }}
+    </span>
+  </div>
+  <div class="separator separator-color" [style.--separator-color]="separatorColor" style="--separator-width: 100%; --line-top: 0; --line-bottom: 1rem;"></div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="blk-logo">
+    <ul class="styled-list">
+      <ng-container *ngFor="let item of menuItems">
+        <a *ngIf="!item.role || canAccess" class="nav-link" [routerLink]="item.link">
+          <li *ngIf="itemName === 'catacombs' || itemName === 'forging'" class="list-item"
+            (mouseenter)="onMouseEnter(item, $event)"
+            (mouseleave)="onMouseLeave()"
+            (click)="navegate(item.link, itemName)">
+            {{ item.label }}
+          </li>
+          <li *ngIf="itemName !== 'catacombs' && itemName !== 'forging'" class="list-item"
+            (mouseenter)="onMouseEnter(item, $event)"
+            (mouseleave)="onMouseLeave()"
+            (click)="onItemClick()">
+            {{ item.label }}
+          </li>
+        </a>
+      </ng-container>
+    </ul>
+
+    <div *ngIf="hoveredItem && _constants.isHelpChecked" class="info-popup" [style.top.px]="popupTop" [style.left.px]="popupLeft">
+      <img src="assets/images/hermit-old-front-eyes2.png" alt="El Ermitaño" class="tooltip-image" />
+      <p [innerHTML]="hoveredItem.description" class="tooltip-text"></p>
+    </div>
+  </div>
+</div>

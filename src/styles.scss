@@ -1,0 +1,665 @@
+//Imports
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:wght@400;600&display=swap');
+@import 'variables';
+
+html, body {
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+  min-width: 400px;
+  text-align: justify;
+  text-indent: 0;
+  line-height: $line-height !important;
+  font-size: $base-font-size !important;
+  font-family: $font-primary !important;
+  background-color: $color-beige;
+}
+
+h1, h2, h3 {
+  color: $color-dark-red !important;
+  font-family: $font-title !important;
+}
+
+.blk-logo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+
+}
+.blk-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  padding: 1rem 0;
+}
+
+.rounded-shadow {
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  border-radius: 0.5rem;
+  border: .1rem solid var(--border-color); //$color-goldenrod;
+  box-shadow: 0 .3em .6em rgba(0, 0, 0, 0.4);
+  padding: 0rem;
+  background-color: $color-beige;
+  margin: .5rem;
+  & ul {
+    padding: 1rem;
+  }
+}
+
+.button {
+  background-color: $color-dark-red;
+  color: $color-beige;
+  &:hover {
+    background-color: $color-olive;
+  }
+}
+
+.logo-icon{
+  font-family: $font-title !important;
+  color: $color-beige;
+  width: 1em;
+  height: 1em;
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+.navbar {
+  background-color: $color-dark-red !important;
+  color: $color-beige !important;
+  //transition: background-color 0.3s ease;
+  font-size: .8rem;
+  text-transform: uppercase;
+  padding-right: 2vw;
+}
+
+.navbar-nav, .navbar-brand{
+  margin-left: 3vw;
+}
+
+.navbar-nav .nav-link {
+  color: inherit  !important;
+  &.active {
+    font-weight: bold !important;
+  }
+  &:hover {
+    color: $color-steel-blue !important;
+  }
+}
+
+.scrolled {
+  background-color: $color-steel-blue !important;
+}
+
+.navbar a.nav-link{
+  color: $color-beige !important;
+  font-family: $font-secondary !important;
+}
+
+.navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgb(139, 0, 0)' stroke-width='2' d='M3 6h24M3 15h24M3 24h24'/%3E%3C/svg%3E") !important;   /* Centrar el icono de fondo */
+}
+
+.navbar-toggler {
+  background-color: $color-beige !important;
+  border-radius: 0.5rem;
+}
+
+.text-highlight {
+  display: inline-block;
+  position: relative;
+  font-size: 5rem;
+  color: $color-beige !important;
+  font-family: $font-title !important;
+  padding-left: .5em;
+}
+
+.text-highlight::after {
+  content: "";
+  position: absolute;
+  left: 1em;
+  right: 0;
+  bottom: 0.35em;
+  height: 0.25em;
+  background-color: #8B0000;
+  z-index: -1;
+}
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+  min-height: 40vh;
+  background-image: url('/assets/images/cover.webp');
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 20%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+  }
+}
+
+.container{
+  //background-color: $color-beige !important;
+  background: linear-gradient(to left, rgba($color-beige, 1) 0%, rgba($color-goldenrod, .2) 100%)  !important;
+  padding: 1rem .5rem ;
+  border-left: .1rem solid rgba($color-goldenrod, .5) !important;
+  border-top-width: 0px !important;
+  border-bottom-width: 0px !important;
+}
+
+.breadcrumb {
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.breadcrumb-item {
+  & + .breadcrumb-item {
+    &:before {
+      content: '>';
+    }
+  }
+  &.active {
+    //color: $color-dark-red !important;
+    pointer-events: none;
+  }
+  a {
+    color: $color-dark-red !important;
+    font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.container-breadcrumb{
+  background-color: rgba($color-goldenrod, 0.25) !important;
+  padding: .4rem 2rem;
+  font-family: $font-secondary;
+  font-size: .8rem;
+}
+
+.papyrus-background {
+  background-color: $color-beige !important;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 1%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0) 3%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.4) 1%, rgba(0, 0, 0, 0) 2%, rgba(0, 0, 0, 0) 3%);
+  background-size: 1em !important;
+  background-position: 0 0, 0 0 !important;
+}
+
+.screen-type {
+  margin-bottom: 2em !important;
+  padding: 0 1rem;
+}
+
+.screen-type::first-letter {
+  color: $color-dark-red;
+  font-weight: bold;
+  font-family: $font-secondary;
+  font-size: 1.5rem;
+  margin-left: .5rem;
+}
+
+//GRID APP
+.grid-container {
+  display: grid;
+  grid-template-columns: 3.75fr 8.25fr;
+  //grid-gap: 1rem;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "hermit options"
+  "hermit record";
+}
+.grid-item {
+  grid-column: span var(--grid-columns);
+  height: auto;
+  overflow: hidden;
+}
+.grid-cover {
+  width: auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse at center,
+      rgba($color-goldenrod, 0.15) 25%,
+      rgba($color-charcoal, 0.85) 75%
+    );
+    z-index: 1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+.grid-options {
+  grid-area: options;
+}
+.grid-hermit {
+  grid-area: hermit;
+  align-self: start;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 2rem
+}
+.grid-record {
+  grid-area: record;
+}
+
+//GRID GAME
+.grid-container-game {
+  display: grid;
+  grid-template-columns: 3.75fr 8.25fr;
+  //grid-gap: 1rem;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+  "options game"
+}
+.grid-optionsG {
+  grid-area: options;
+  align-self: start;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.grid-gameG {
+  grid-area: game;
+}
+
+
+//FOOTER
+footer{
+  color: $color-goldenrod;
+  background-color: $color-charcoal;
+  padding: 2rem;
+}
+.separator {
+  height: 4px;
+  margin: var(--line-top) 0 var(--line-bottom);
+  background: linear-gradient(to right, transparent, $color-beige, transparent);
+  width: var(--separator-width);
+  position: relative;
+  &:is(.separator-color) {
+    background: linear-gradient(to right, transparent, var(--separator-color), transparent);
+  }
+  &.fade-left {
+    background: linear-gradient(to left, var(--separator-color), transparent);
+  }
+  &.fade-right {
+    background: linear-gradient(to right, var(--separator-color), transparent);
+  }
+}
+.separator::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  width: 100%;
+  background: inherit;
+}
+
+.styled-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+
+  .list-item {
+    position: relative;
+    padding: 1rem;
+    font-family: $font-secondary;
+    font-weight: bold;
+    color: $color-dark-red;
+    transition: transform 0.4s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    // Agrega los símbolos a la izquierda y a la derecha
+    &::before {
+      content: '> ';
+      position: absolute;
+      left: -1rem;
+      opacity: 0;
+      transition: opacity .8s ease;
+    }
+
+    &::after {
+      content: ' <';
+      position: absolute;
+      right: -1rem;
+      opacity: 0;
+      transition: opacity .8s ease;
+    }
+
+    &:hover {
+      transform: scale(1.4);
+      color: $color-steel-blue;
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.dialogue{
+  padding: 1rem;
+  font-size: 0.9rem !important;
+  line-height: 1.2rem !important;
+  text-align: left;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip-name {
+  font-weight: bold;
+  &.hovered{
+    background-color: rgba($color-charcoal, .1);
+  }
+}
+
+.tooltipText {
+  display: block;
+  background-color: rgba($color-charcoal, .1);
+}
+
+.dialogue[ngIf="!isHovered"] {
+  display: none;
+}
+
+.tooltip-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.image-container img {
+  border-radius: .25rem;
+  background-color: $color-charcoal;
+}
+
+.welcome-container {
+  margin: 1rem;
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  color: white;
+  text-align: right;
+  padding-right: 2vw;
+  font-size: 1.3rem;
+}
+
+.navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+}
+.badge{
+  background-color: $color-beige !important;
+  color: $color-charcoal !important;
+  vertical-align: bottom !important;
+  font-family: $font-secondary !important;
+  font-size: .7rem;
+  margin-left: .3rem !important;
+  display: inline-block;
+}
+
+.nav-item{
+  padding-left: .5rem;
+}
+
+.dropdown-menu{
+  background-color: rgba($color-dark-red, 0.9) !important;
+}
+
+.dropdown-menu li a{
+  color: $color-beige !important;
+  font-family: $font-secondary !important;
+  &:hover,
+  &:focus {
+    color: $color-steel-blue !important;
+    text-decoration: none !important;
+    background-color: rgba($color-beige, 0.9) !important;
+    cursor: pointer !important;
+  }
+}
+
+.cut-corner-box {
+  position: relative;
+  padding: 20px;
+  background-color: $color-goldenrod; /* Color dorado */
+  clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+    border: 5px solid #8B4513; /* Borde marrón */
+    pointer-events: none;
+  }
+}
+
+.highlight-text{
+  color: $color-dark-red !important;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.cover-text {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-family: $font-title !important;
+  color: $color-beige; /* Cambia este color según tu diseño */
+  z-index: 3;
+  //padding: .5rem;
+  //border-radius: .3rem;
+  //background-color: rgba($color-charcoal,.5);
+  text-transform: capitalize;
+  font-weight: bold;
+  &:before{
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: -.5rem;
+    width: 200%;
+    height: 0.4em;
+    background-color: $color-dark-red;
+    z-index: -1;
+    transform: translateY(-50%);
+    border-radius: 4px;
+  }
+}
+
+.active {
+  font-weight: bold !important;
+  text-decoration: underline !important;
+  color: $color-goldenrod !important; /* Puedes ajustar este color según tu diseño */
+}
+
+.btn-primary {
+  color: #fff; /* Texto blanco */
+  background-color: $color-dark-red !important; /* Azul Bootstrap */
+  border-color: $color-dark-red !important; /* Borde azul */
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $color-steel-blue !important;
+  border-color: $color-charcoal !important;
+}
+
+.btn-change-item {
+  background-color: rgba($color-steel-blue, 0.75) !important; /* Color verde relacionado con la acción de aplicar o equipar */
+  color: white !important;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid $color-steel-blue !important; /* Bordes en un tono más oscuro para darle profundidad */
+  border-radius: 8px; /* Bordes redondeados para un toque suave */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  /* Efecto de hover */
+  &:hover {
+    background-color: $color-steel-blue !important; /* Color más oscuro para el hover */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
+  }
+
+  /* Efecto de focus */
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba($color-steel-blue, 0.6) !important; /* Sombra cuando se enfoca el botón */
+  }
+
+  /* Para dispositivos pequeños */
+  @media (max-width: 600px) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.btn-playing {
+  background-color: rgba($color-goldenrod, 0.75) !important; /* Color verde relacionado con la acción de aplicar o equipar */
+  color: $color-charcoal !important;
+  padding: 12px 24px;
+  margin-bottom: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid $color-goldenrod !important; /* Bordes en un tono más oscuro para darle profundidad */
+  border-radius: 8px; /* Bordes redondeados para un toque suave */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  /* Efecto de hover */
+  &:hover {
+    background-color: $color-goldenrod !important; /* Color más oscuro para el hover */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño al pasar el cursor */
+  }
+
+  /* Efecto de focus */
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba($color-goldenrod, 0.6) !important; /* Sombra cuando se enfoca el botón */
+  }
+
+  /* Para dispositivos pequeños */
+  @media (max-width: 600px) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+.item-element-card {
+  font-family: 'Georgia', serif;
+  background-color: rgba($color-olive, 0.1);
+  border: 2px solid $color-goldenrod;
+  border-radius: 5px;
+  padding: 15px;
+  max-width: 100%;
+  color: $color-charcoal;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.item-element-header {
+  text-align: center;
+}
+
+.item-element-header h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 0;
+  color: $color-dark-red;
+}
+
+.item-element-header p {
+  font-style: italic;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background: $color-goldenrod;
+  margin: 10px 0;
+}
+
+.item-element-stats p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.item-element-attributes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.attribute {
+  border: 1px solid $color-goldenrod;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: $color-beige;
+  font-size: 14px;
+}
+
+.attribute span:first-child {
+  display: block;
+  font-weight: bold;
+}
+
+.attribute span:last-child {
+  font-size: 12px;
+  color: $color-dark-red;
+}
+
+.item-element-extra p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.inline-icon {
+  display: inline;
+  vertical-align: middle;
+  height: 1em;
+  margin-right: 0.75rem;
+}
